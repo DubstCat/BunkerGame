@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/btn_fr_hero"
+        android:icon="?attr/actionModeCopyDrawable"
+        android:title="герой" />
+    <item
+        android:id="@+id/btn_fr_charact"
+        android:icon="@android:drawable/stat_notify_sync"
+        android:title="хар-ка"
+        />
+    <item
+        android:id="@+id/btn_fr_cat"
+        android:icon="@android:drawable/ic_dialog_alert"
+        android:title="бяда" />
+</menu>
