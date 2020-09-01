@@ -1,9 +1,8 @@
 package com.voronets.bunkergame
 
-import android.R.attr.name
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_catast.*
 
@@ -18,12 +17,15 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
         text_view_catast.text = Characts.savedCatastText
 
         button_catast.setOnClickListener{
-            text_view_catast.text = Characts.catast.shuffled()[0]
-            Characts.savedCatastText = text_view_catast.text.toString()
+            AlertDialog.Builder(context)
+                .setTitle("Перегенерация катастрофы")
+                .setMessage("Вы уверены, что хотите перегенерировать катастрофу?")
+                .setPositiveButton("Да") { _, _ ->
+                    text_view_catast.text = Characts.catast.shuffled()[0]
+                    Characts.savedCatastText = text_view_catast.text.toString() }
+                .setNegativeButton("Нет",null) .create().show()
         }
 
     }
 
 }
-
-

@@ -2,13 +2,9 @@ package com.voronets.bunkergame
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.text.method.ScrollingMovementMethod
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
-
-import kotlin.random.Random
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         val catastFragment = CatastFragment()
 
         supportFragmentManager.beginTransaction().replace(R.id.main_fragment, catastFragment).commit()
-
 
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
@@ -38,6 +33,3 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.main_fragment, fragment).commit()
     }
     }
-
-
-

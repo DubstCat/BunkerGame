@@ -8,9 +8,10 @@
 
     <TextView
         android:id="@+id/text_view_catast"
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="@string/hello_blank_fragment"
+        android:text="Лучшая игра на свете"
         app:layout_constraintBottom_toTopOf="@+id/button_catast"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,11 +1,12 @@
 package com.voronets.bunkergame
 
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_hero.*
 import kotlin.random.Random
 
@@ -19,7 +20,12 @@ class HeroFragment : Fragment(R.layout.fragment_hero) {
         text_view_hero.movementMethod = ScrollingMovementMethod()
         text_view_hero.text = Characts.savedHeroText
         button_hero.setOnClickListener{
-            createHero()
+            AlertDialog.Builder(context)
+                .setTitle("Перегенерация персонажа")
+                .setMessage("Вы уверены, что хотите перегенерировать персонажа?")
+                .setPositiveButton("Да") { _, _ -> createHero() }
+                .setNegativeButton("Нет",null) .create().show()
+
         }
     }
 
@@ -42,5 +48,3 @@ class HeroFragment : Fragment(R.layout.fragment_hero) {
         Characts.savedHeroText=text_view_hero.text.toString()
     }
 }
-
-
