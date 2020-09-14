@@ -28,14 +28,14 @@ class CharactFragment : Fragment(R.layout.fragment_charact) {
 
     private fun setCharactText(){
         text_view_charact.text = "Профессия: ${Characts.professions.shuffled()[0]}\n\n" +
-                "Способность к деторождению: ${Characts.detorozhd.shuffled()[0]}\n\n" +
+                "Способность к деторождению: ${Characts.reproduction.shuffled()[0]}\n\n" +
                 "Состояние здоровья: ${Characts.health.shuffled()[0]}\n\n" +
                 "Телосложение: ${Characts.body.shuffled()[0]}\n\n" +
-                "Фобии: ${Characts.fobii.shuffled()[0]}\n\n" +
+                "Фобии: ${Characts.fear.shuffled()[0]}\n\n" +
                 "Хобби: ${Characts.hobby.shuffled()[0]}\n\n" +
-                "Черты характера: ${Characts.harakter.shuffled()[0]}\n\n" +
-                "Доп. инфа: ${Characts.dopinfa.shuffled()[0]}\n\n" +
-                "Багаж: ${Characts.bagazh.shuffled()[0]}\n\n"
+                "Черты характера: ${Characts.character.shuffled()[0]}\n\n" +
+                "Доп. инфа: ${Characts.extra_info.shuffled()[0]}\n\n" +
+                "Багаж: ${Characts.bag.shuffled()[0]}\n\n"
         Characts.savedCharactsText = text_view_charact.text.toString()
     }
 }

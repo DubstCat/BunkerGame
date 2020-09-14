@@ -1,12 +1,10 @@
 package com.voronets.bunkergame
 
 import android.app.AlertDialog
-import android.app.Dialog
-import android.content.DialogInterface
 import android.os.Bundle
-import android.text.method.ScrollingMovementMethod
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_hero.*
 import kotlin.random.Random
 
@@ -17,8 +15,14 @@ class HeroFragment : Fragment(R.layout.fragment_hero) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        text_view_hero.movementMethod = ScrollingMovementMethod()
-        text_view_hero.text = Characts.savedHeroText
+        if (Characts.savedHero!=null){
+            RV_Characteristics.layoutManager = LinearLayoutManager(context)
+            val adapter = CharactAdapter(Characts.savedHero!!)
+            adapter.notifyItemInserted(Characts.savedHero!!.size-1)
+            RV_Characteristics.adapter = adapter
+        }
+
+
         button_hero.setOnClickListener{
             AlertDialog.Builder(context)
                 .setTitle("Перегенерация персонажа")
@@ -30,21 +34,28 @@ class HeroFragment : Fragment(R.layout.fragment_hero) {
     }
 
     private fun createHero(){
-        //text_view_hero.setTextSize(17f)
-        text_view_hero.text = "Пол: ${arrayListOf<String>("мужской","женский").shuffled()[0]}\n\n" +
-                "Возраст: ${Random.nextInt(18,100)}\n\n" +
-                "Профессия: ${Characts.professions.shuffled()[0]}\n\n" +
-                "Способность к деторождению: ${Characts.detorozhd.shuffled()[0]}\n\n" +
-                "Состояние здоровья: ${Characts.health.shuffled()[0]}\n\n" +
-                "Телосложение: ${Characts.body.shuffled()[0]}\n\n" +
-                "Фобии: ${Characts.fobii.shuffled()[0]}\n\n" +
-                "Хобби: ${Characts.hobby.shuffled()[0]}\n\n" +
-                "Черты характера: ${Characts.harakter.shuffled()[0]}\n\n" +
-                "Доп. инфа: ${Characts.dopinfa.shuffled()[0]}\n\n" +
-                "Багаж: ${Characts.bagazh.shuffled()[0]}\n\n" +
-                "Карта №1: ${Characts.deistvija.shuffled()[0]}\n\n" +
-                "Карта №2: ${Characts.deistvija.shuffled()[0]}\n\n"
 
-        Characts.savedHeroText=text_view_hero.text.toString()
+        val CharactList = listOf(
+            Charact(Name = "Пол:", Description = arrayListOf("мужской","женский").shuffled()[0]),
+            Charact(Name = "Возраст:", Description = Random.nextInt(18,100).toString()),
+            Charact(Name = "Профессия", Description = Characts.professions.shuffled()[0]),
+            Charact(Name = "Способность к деторождению", Description = Characts.reproduction.shuffled()[0]),
+            Charact(Name = "Состояние здоровья", Description = Characts.health.shuffled()[0]),
+            Charact(Name = "Телосложение", Description = Characts.body.shuffled()[0]),
+            Charact(Name = "Фобии", Description = Characts.fear.shuffled()[0]),
+            Charact(Name = "Хобби", Description = Characts.hobby.shuffled()[0]),
+            Charact(Name = "Черты характера", Description = Characts.character.shuffled()[0]),
+            Charact(Name = "Доп инфа", Description = Characts.extra_info.shuffled()[0]),
+            Charact(Name = "Багаж", Description = Characts.bag.shuffled()[0]),
+            Charact(Name = "Карта №1", Description = Characts.actions.shuffled()[0]),
+            Charact(Name = "Карта №2", Description = Characts.actions.shuffled()[0])
+        )
+
+        RV_Characteristics.layoutManager = LinearLayoutManager(context)
+        val adapter = CharactAdapter(CharactList)
+        adapter.notifyItemInserted(CharactList.size-1)
+        RV_Characteristics.adapter = adapter
+
+        Characts.savedHero=CharactList
     }
 }
