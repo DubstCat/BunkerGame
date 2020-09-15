@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val heroFragment = HeroFragment()
         val catastFragment = CatastFragment()
 
-        supportFragmentManager.beginTransaction().replace(R.id.main_fragment, catastFragment).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.main_fragment, heroFragment).commit()
 
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
