@@ -26,6 +26,7 @@ class CharactAdapter (
         R.drawable.bg_text_blue,
         R.drawable.bg_text_purple
     )
+    private lateinit var mRecyclerView:RecyclerView
 
     inner class CharactViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
@@ -64,13 +65,21 @@ class CharactAdapter (
             "Фобии" -> v.tv_charact_description.text = MainInfo.fear.shuffled()[0]
             "Багаж" -> v.tv_charact_description.text = MainInfo.bag.shuffled()[0]
             "Карта №1"->{
-                v.tv_charact_description.text = ""
-                v.tv_charact_name.text = ""
-                v.tv_charact_description.background = null
+                charactItems.remove(
+                    CharactItem(name = v.tv_charact_name.text.toString(), description = v.tv_charact_description.text.toString())
+                )
+                mRecyclerView.adapter!!.notifyDataSetChanged()
             }
-            "Карта №2" -> charactItems.remove(
-                CharactItem(name = v.tv_charact_name.text.toString(), description = v.tv_charact_description.text.toString())
-            )
+            "Карта №2" -> {
+                charactItems.remove(
+                    CharactItem(name = v.tv_charact_name.text.toString(), description = v.tv_charact_description.text.toString())
+                )
+                mRecyclerView.adapter!!.notifyDataSetChanged()
+            }
         }
+
+    }
+    fun atachView(RV:RecyclerView){
+        this.mRecyclerView = RV
     }
 }

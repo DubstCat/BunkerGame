@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.voronets.bunkergame.Fragments.CatastFragment
-import com.voronets.bunkergame.Fragments.CharactFragment
 import com.voronets.bunkergame.Fragments.HeroFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -21,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val heroFragment = HeroFragment()
-        val charactFragment = CharactFragment()
         val catastFragment = CatastFragment()
 
         supportFragmentManager.beginTransaction().replace(R.id.main_fragment, catastFragment).commit()
@@ -29,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.btn_fr_hero -> setCurrentFragment(heroFragment)
-                R.id.btn_fr_charact -> setCurrentFragment(charactFragment)
                 R.id.btn_fr_cat -> setCurrentFragment(catastFragment)
                 }
             true

@@ -20,6 +20,7 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var adapter:CharactAdapter? = CharactAdapter(mutableListOf())
+        adapter!!.atachView(RV_Characteristics)
         RV_Characteristics.layoutManager = LinearLayoutManager(context)
         RV_Characteristics.adapter = adapter
 
@@ -101,6 +102,7 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
         RV_Characteristics.layoutManager = LinearLayoutManager(context)
         val adapter =
             CharactAdapter(CharactList)
+        adapter.atachView(RV_Characteristics)
         adapter.notifyItemInserted(CharactList.size-1)
         RV_Characteristics.adapter = adapter
 
