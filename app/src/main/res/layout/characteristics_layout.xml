@@ -19,7 +19,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:background="@drawable/bg_characts_text"
+        android:background="@drawable/bg_text_cyan"
         android:text="aaaaa"
         android:textColor="#ffffff"
         android:textSize="16sp"
