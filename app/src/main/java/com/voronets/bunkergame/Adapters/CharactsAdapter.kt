@@ -1,9 +1,11 @@
 package com.voronets.bunkergame.Adapters
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.voronets.bunkergame.Controllers.CharactItemController
 import com.voronets.bunkergame.DataClasses.CharactItem
 import com.voronets.bunkergame.DataClasses.MainInfo
 import com.voronets.bunkergame.R
@@ -14,11 +16,10 @@ import kotlinx.android.synthetic.main.characteristics_layout.view.*
  */
 
 class CharactAdapter (
-    private var charactItems:List<CharactItem>
-):RecyclerView.Adapter<CharactAdapter.CharactViewHolder>(){
+    private var charactItems:MutableList<CharactItem>
+):RecyclerView.Adapter<CharactAdapter.CharactViewHolder>(), CharactItemController{
     private var backgroundsList = listOf<Int>(
         R.drawable.bg_text_red,
-        R.drawable.bg_text_orange,
         R.drawable.bg_text_orange,
         R.drawable.bg_text_green,
         R.drawable.bg_text_cyan,
@@ -38,25 +39,38 @@ class CharactAdapter (
 
     override fun onBindViewHolder(holder: CharactViewHolder, position: Int) {
         holder.itemView.setOnClickListener{
-            when(it.tv_charact_name.text){
-                "Профессия" -> it.tv_charact_description.text = MainInfo.professions.shuffled()[0]
-                "Состояние здоровья" -> it.tv_charact_description.text = MainInfo.health.shuffled()[0]
-                "Фобии" -> it.tv_charact_description.text = MainInfo.fear.shuffled()[0]
-                "Багаж" -> it.tv_charact_description.text = MainInfo.bag.shuffled()[0]
-                "Карта №1" -> it.tv_charact_description.text = ""
-                "Карта №2" -> it.tv_charact_description.text = ""
-
-
-            }
+            AlertDialog.Builder(it.context)
+                .setTitle("Перегенерация")
+                .setMessage("Вы уверены, что хотите перегенерировать характеристику \"${it.tv_charact_name.text}\"?")
+                .setPositiveButton("Да") { _, _ -> rerollCharact(v = it)}
+                .setNegativeButton("Нет", null).create().show()
         }
 
         holder.itemView.apply {
-            tv_charact_name.text = charactItems[position].Name
-            tv_charact_description.text = charactItems[position].Description
+            tv_charact_name.text = charactItems[position].name
+            tv_charact_description.text = charactItems[position].description
             tv_charact_description.background = resources.getDrawable(backgroundsList.shuffled()[0])
         }
     }
 
     override fun getItemViewType(position: Int): Int {
         return 0
-    }}
+    }
+
+    override fun rerollCharact(v: View) {
+        when(v.tv_charact_name.text){
+            "Профессия" -> v.tv_charact_description.text = MainInfo.professions.shuffled()[0]
+            "Состояние здоровья" -> v.tv_charact_description.text = MainInfo.health.shuffled()[0]
+            "Фобии" -> v.tv_charact_description.text = MainInfo.fear.shuffled()[0]
+            "Багаж" -> v.tv_charact_description.text = MainInfo.bag.shuffled()[0]
+            "Карта №1"->{
+                v.tv_charact_description.text = ""
+                v.tv_charact_name.text = ""
+                v.tv_charact_description.background = null
+            }
+            "Карта №2" -> charactItems.remove(
+                CharactItem(name = v.tv_charact_name.text.toString(), description = v.tv_charact_description.text.toString())
+            )
+        }
+    }
+}

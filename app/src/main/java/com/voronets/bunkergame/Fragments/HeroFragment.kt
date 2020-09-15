@@ -6,7 +6,6 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.voronets.bunkergame.Adapters.CharactAdapter
-import com.voronets.bunkergame.Controllers.CharactItemController
 import com.voronets.bunkergame.Controllers.HeroLogic
 import com.voronets.bunkergame.DataClasses.MainInfo
 import com.voronets.bunkergame.DataClasses.CharactItem
@@ -17,10 +16,10 @@ import kotlin.random.Random
 /**
  * A simple [Fragment] subclass.
  */
-class HeroFragment : Fragment(R.layout.fragment_hero), CharactItemController, HeroLogic {
+class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var adapter:CharactAdapter? = CharactAdapter(listOf())
+        var adapter:CharactAdapter? = CharactAdapter(mutableListOf())
         RV_Characteristics.layoutManager = LinearLayoutManager(context)
         RV_Characteristics.adapter = adapter
 
@@ -43,59 +42,60 @@ class HeroFragment : Fragment(R.layout.fragment_hero), CharactItemController, He
 
     override fun createHero(){
 
-        val CharactList = listOf(
+        val CharactList = mutableListOf(
             CharactItem(
-                Name = "Пол",
-                Description = arrayListOf("мужской", "женский").shuffled()[0]
+                name = "Пол",
+                description = arrayListOf("мужской", "женский").shuffled()[0]
             ),
             CharactItem(
-                Name = "Возраст",
-                Description = Random.nextInt(18, 100).toString()
+                name = "Возраст",
+                description = Random.nextInt(18, 100).toString()
             ),
             CharactItem(
-                Name = "Профессия",
-                Description = MainInfo.professions.shuffled()[0]
+                name = "Профессия",
+                description = MainInfo.professions.shuffled()[0]
             ),
             CharactItem(
-                Name = "Способность к деторождению",
-                Description = MainInfo.reproduction.shuffled()[0]
+                name = "Способность к деторождению",
+                description = MainInfo.reproduction.shuffled()[0]
             ),
             CharactItem(
-                Name = "Состояние здоровья",
-                Description = MainInfo.health.shuffled()[0]
+                name = "Состояние здоровья",
+                description = MainInfo.health.shuffled()[0]
             ),
             CharactItem(
-                Name = "Телосложение",
-                Description = MainInfo.body.shuffled()[0]
+                name = "Телосложение",
+                description = MainInfo.body.shuffled()[0]
             ),
             CharactItem(
-                Name = "Фобии",
-                Description = MainInfo.fear.shuffled()[0]
+                name = "Фобии",
+                description = MainInfo.fear.shuffled()[0]
             ),
             CharactItem(
-                Name = "Хобби",
-                Description = MainInfo.hobby.shuffled()[0]
+                name = "Хобби",
+                description = MainInfo.hobby.shuffled()[0]
             ),
             CharactItem(
-                Name = "Черты характера",
-                Description = MainInfo.character.shuffled()[0]
+                name = "Черты характера",
+                description = MainInfo.character.shuffled()[0]
             ),
             CharactItem(
-                Name = "Доп инфа",
-                Description = MainInfo.extra_info.shuffled()[0]
+                name = "Доп инфа",
+                description = MainInfo.extra_info.shuffled()[0]
             ),
             CharactItem(
-                Name = "Багаж",
-                Description = MainInfo.bag.shuffled()[0]
+                name = "Багаж",
+                description = MainInfo.bag.shuffled()[0]
             ),
             CharactItem(
-                Name = "Карта №1",
-                Description = MainInfo.actions.shuffled()[0]
+                name = "Карта №1",
+                description = MainInfo.actions.shuffled()[0]
             ),
             CharactItem(
-                Name = "Карта №2",
-                Description = MainInfo.actions.shuffled()[0]
+                name = "Карта №2",
+                description = MainInfo.actions.shuffled()[0]
             )
+
         )
 
         RV_Characteristics.layoutManager = LinearLayoutManager(context)
@@ -107,7 +107,4 @@ class HeroFragment : Fragment(R.layout.fragment_hero), CharactItemController, He
         MainInfo.savedHeroes =CharactList
     }
 
-    override fun rerollCharact() {
-
-    }
 }

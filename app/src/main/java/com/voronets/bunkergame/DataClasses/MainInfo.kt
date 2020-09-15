@@ -129,5 +129,5 @@ object MainInfo{
 
     var savedCharactsText=""
 
-    var savedHeroes:List<CharactItem>?=null
+    var savedHeroes:MutableList<CharactItem>?=null
 }
