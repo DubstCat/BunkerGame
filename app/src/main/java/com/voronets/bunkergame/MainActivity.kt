@@ -4,7 +4,14 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.voronets.bunkergame.Fragments.CatastFragment
+import com.voronets.bunkergame.Fragments.CharactFragment
+import com.voronets.bunkergame.Fragments.HeroFragment
 import kotlinx.android.synthetic.main.activity_main.*
+
+/**
+ * Main Activity with fragment manager
+ */
 
 class MainActivity : AppCompatActivity() {
 

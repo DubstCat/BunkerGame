@@ -1,6 +1,10 @@
-package com.voronets.bunkergame
+package com.voronets.bunkergame.DataClasses
 
-object Characts{
+/**
+ * This class was made for containing info about heroes and situations
+ */
+
+object MainInfo{
     var catast = arrayListOf<String>("Супервулкан \nВзрыв Йеллоустонского супервулкана пошатнул Землю выброшенный в атмосферу пепел закрыл Солнце на несколько месяцев На планете началась \"ядерная зима\" средняя температура опустилась на 11 градусов погибли пять из каждых шести населявших Землю существ Климат существенно изменился На планете теперь царит глобальная засуха\n" +
             "Остаток выжившего населения: 7%\n" +
             "Разрушения на поверхности: 9%.",
@@ -125,5 +129,5 @@ object Characts{
 
     var savedCharactsText=""
 
-    var savedHero:List<Charact>?=null
+    var savedHeroes:List<CharactItem>?=null
 }
