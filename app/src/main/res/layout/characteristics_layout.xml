@@ -15,14 +15,17 @@
 
     <TextView
         android:id="@+id/tv_charact_description"
-        android:textStyle="bold"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginStart="24dp"
         android:background="@drawable/bg_text_cyan"
+        android:singleLine="false"
         android:text="aaaaa"
+        android:textAlignment="viewStart"
         android:textColor="#ffffff"
         android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_charact_name"
         app:layout_constraintTop_toTopOf="parent" />
 

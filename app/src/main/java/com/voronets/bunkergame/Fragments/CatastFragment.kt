@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.fragment_catast.*
 
 
 /**
- * A simple [Fragment] subclass.
+ * A [Fragment] for displaying game situation info.
  */
 class CatastFragment : Fragment(R.layout.fragment_catast) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

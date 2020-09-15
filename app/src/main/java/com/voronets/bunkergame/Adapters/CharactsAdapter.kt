@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.voronets.bunkergame.DataClasses.CharactItem
+import com.voronets.bunkergame.DataClasses.MainInfo
 import com.voronets.bunkergame.R
 import kotlinx.android.synthetic.main.characteristics_layout.view.*
 
@@ -25,7 +26,10 @@ class CharactAdapter (
         R.drawable.bg_text_purple
     )
 
-    inner class CharactViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
+    inner class CharactViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.characteristics_layout, parent, false)
         return CharactViewHolder(view)
@@ -33,6 +37,19 @@ class CharactAdapter (
     override fun getItemCount(): Int = charactItems.size
 
     override fun onBindViewHolder(holder: CharactViewHolder, position: Int) {
+        holder.itemView.setOnClickListener{
+            when(it.tv_charact_name.text){
+                "Профессия" -> it.tv_charact_description.text = MainInfo.professions.shuffled()[0]
+                "Состояние здоровья" -> it.tv_charact_description.text = MainInfo.health.shuffled()[0]
+                "Фобии" -> it.tv_charact_description.text = MainInfo.fear.shuffled()[0]
+                "Багаж" -> it.tv_charact_description.text = MainInfo.bag.shuffled()[0]
+                "Карта №1" -> it.tv_charact_description.text = ""
+                "Карта №2" -> it.tv_charact_description.text = ""
+
+
+            }
+        }
+
         holder.itemView.apply {
             tv_charact_name.text = charactItems[position].Name
             tv_charact_description.text = charactItems[position].Description

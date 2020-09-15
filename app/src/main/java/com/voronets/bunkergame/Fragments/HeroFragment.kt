@@ -6,6 +6,8 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.voronets.bunkergame.Adapters.CharactAdapter
+import com.voronets.bunkergame.Controllers.CharactItemController
+import com.voronets.bunkergame.Controllers.HeroLogic
 import com.voronets.bunkergame.DataClasses.MainInfo
 import com.voronets.bunkergame.DataClasses.CharactItem
 import com.voronets.bunkergame.R
@@ -15,7 +17,7 @@ import kotlin.random.Random
 /**
  * A simple [Fragment] subclass.
  */
-class HeroFragment : Fragment(R.layout.fragment_hero) {
+class HeroFragment : Fragment(R.layout.fragment_hero), CharactItemController, HeroLogic {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var adapter:CharactAdapter? = CharactAdapter(listOf())
@@ -36,19 +38,18 @@ class HeroFragment : Fragment(R.layout.fragment_hero) {
                 .setMessage("Вы уверены, что хотите перегенерировать персонажа?")
                 .setPositiveButton("Да") { _, _ -> createHero() }
                 .setNegativeButton("Нет",null) .create().show()
-
         }
     }
 
-    private fun createHero(){
+    override fun createHero(){
 
         val CharactList = listOf(
             CharactItem(
-                Name = "Пол:",
+                Name = "Пол",
                 Description = arrayListOf("мужской", "женский").shuffled()[0]
             ),
             CharactItem(
-                Name = "Возраст:",
+                Name = "Возраст",
                 Description = Random.nextInt(18, 100).toString()
             ),
             CharactItem(
@@ -104,5 +105,9 @@ class HeroFragment : Fragment(R.layout.fragment_hero) {
         RV_Characteristics.adapter = adapter
 
         MainInfo.savedHeroes =CharactList
+    }
+
+    override fun rerollCharact() {
+
     }
 }
