@@ -1,6 +1,7 @@
 package com.voronets.bunkergame.Adapters
 
 import android.app.AlertDialog
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import com.voronets.bunkergame.DataClasses.CharactItem
 import com.voronets.bunkergame.DataClasses.MainInfo
 import com.voronets.bunkergame.R
 import kotlinx.android.synthetic.main.characteristics_layout.view.*
+import kotlin.random.Random
 
 /**
  * Adapter for characteristics in Heroes Recycler View
@@ -26,7 +28,7 @@ class CharactAdapter (
         R.drawable.bg_text_blue,
         R.drawable.bg_text_purple
     )
-    private lateinit var mRecyclerView:RecyclerView
+    private var mRecyclerView:RecyclerView? = null
 
     inner class CharactViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
@@ -44,7 +46,7 @@ class CharactAdapter (
                 .setTitle("Перегенерация")
                 .setMessage("Вы уверены, что хотите перегенерировать характеристику \"${it.tv_charact_name.text}\"?")
                 .setPositiveButton("Да") { _, _ -> rerollCharact(v = it)}
-                .setNegativeButton("Нет", null).create().show()
+                .setNeutralButton("Нет", null).create().show()
         }
 
         holder.itemView.apply {
@@ -61,20 +63,30 @@ class CharactAdapter (
     override fun rerollCharact(v: View) {
         when(v.tv_charact_name.text){
             "Профессия" -> v.tv_charact_description.text = MainInfo.professions.shuffled()[0]
-            "Состояние здоровья" -> v.tv_charact_description.text = MainInfo.health.shuffled()[0]
+            "Состояние здоровья" -> v.tv_charact_description.text = MainInfo.health.shuffled()[0]+" "+ Random.nextInt(10,100)+"%"
+            "Хобби" ->v.tv_charact_description.text = MainInfo.hobby.shuffled()[0]
+            "Телосложение" -> v.tv_charact_description.text = MainInfo.body.shuffled()[0]
             "Фобии" -> v.tv_charact_description.text = MainInfo.fear.shuffled()[0]
             "Багаж" -> v.tv_charact_description.text = MainInfo.bag.shuffled()[0]
+            "Ориентация" -> {
+                when(v.tv_charact_description.text){
+                    "Гомосексуальность" -> v.tv_charact_description.text = "Гетеросексуальность"
+                    "Гетеросексуальность" -> v.tv_charact_description.text = "Гомосексуальность"
+
+                }
+            }
+
             "Карта №1"->{
                 charactItems.remove(
                     CharactItem(name = v.tv_charact_name.text.toString(), description = v.tv_charact_description.text.toString())
                 )
-                mRecyclerView.adapter!!.notifyDataSetChanged()
+                mRecyclerView!!.adapter!!.notifyDataSetChanged()
             }
             "Карта №2" -> {
                 charactItems.remove(
                     CharactItem(name = v.tv_charact_name.text.toString(), description = v.tv_charact_description.text.toString())
                 )
-                mRecyclerView.adapter!!.notifyDataSetChanged()
+                    mRecyclerView!!.adapter!!.notifyDataSetChanged()
             }
         }
 

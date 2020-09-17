@@ -8,5 +8,5 @@
     <item
         android:id="@+id/btn_fr_cat"
         android:icon="@android:drawable/ic_dialog_alert"
-        android:title="бяда" />
+        android:title="катастрофа" />
 </menu>

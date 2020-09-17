@@ -1,17 +1,20 @@
 package com.voronets.bunkergame.Fragments
 
 import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
+
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.voronets.bunkergame.Adapters.CharactAdapter
 import com.voronets.bunkergame.Controllers.HeroLogic
-import com.voronets.bunkergame.DataClasses.MainInfo
 import com.voronets.bunkergame.DataClasses.CharactItem
+import com.voronets.bunkergame.DataClasses.MainInfo
 import com.voronets.bunkergame.R
 import kotlinx.android.synthetic.main.fragment_hero.*
 import kotlin.random.Random
+
 
 /**
  * A simple [Fragment] subclass.
@@ -19,30 +22,26 @@ import kotlin.random.Random
 class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var adapter:CharactAdapter? = CharactAdapter(mutableListOf())
-        adapter!!.atachView(RV_Characteristics)
-        RV_Characteristics.layoutManager = LinearLayoutManager(context)
-        RV_Characteristics.adapter = adapter
 
         if (MainInfo.savedHeroes !=null){
             RV_Characteristics.layoutManager = LinearLayoutManager(context)
-            adapter = CharactAdapter(MainInfo.savedHeroes!!)
+            val adapter = CharactAdapter(MainInfo.savedHeroes!!)
+            adapter.atachView(RV_Characteristics)
             adapter.notifyItemInserted(MainInfo.savedHeroes!!.size-1)
             RV_Characteristics.adapter = adapter
         }
 
-
         button_hero.setOnClickListener{
+
             AlertDialog.Builder(context)
                 .setTitle("Перегенерация персонажа")
                 .setMessage("Вы уверены, что хотите перегенерировать персонажа?")
                 .setPositiveButton("Да") { _, _ -> createHero() }
-                .setNegativeButton("Нет",null) .create().show()
+                .setNeutralButton("Нет",null) .create().show()
         }
     }
 
     override fun createHero(){
-
         val CharactList = mutableListOf(
             CharactItem(
                 name = "Пол",
@@ -61,8 +60,12 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
                 description = MainInfo.reproduction.shuffled()[0]
             ),
             CharactItem(
+                name = "Ориентация",
+                description =  MainInfo.orientation.shuffled()[0]
+            ),
+            CharactItem(
                 name = "Состояние здоровья",
-                description = MainInfo.health.shuffled()[0]
+                description = MainInfo.health.shuffled()[0]+" "+ Random.nextInt(10,100)+"%"
             ),
             CharactItem(
                 name = "Телосложение",
@@ -96,7 +99,6 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
                 name = "Карта №2",
                 description = MainInfo.actions.shuffled()[0]
             )
-
         )
 
         RV_Characteristics.layoutManager = LinearLayoutManager(context)
