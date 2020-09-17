@@ -3,7 +3,6 @@ package com.voronets.bunkergame.Fragments
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
-import android.text.Html
 import android.text.method.LinkMovementMethod
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -31,6 +30,7 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
                     text_view_catast.text = MainInfo.catast.shuffled()[0] +"" +
                             "\nВремя нахождения в бункере - ${Random.nextInt(1,50)} лет" +
                             "\nЗапасов воды и еды на ${Random.nextInt(1,50)} лет"+
+                            "\nХарактеристика бункера - ${MainInfo.bonus_items.shuffled()[0]}"+
                             "\n\nРазработчик приложения - t.me/DubsCat"
                     text_view_catast.movementMethod = LinkMovementMethod.getInstance()
                     MainInfo.savedCatastText = text_view_catast.text.toString() }
