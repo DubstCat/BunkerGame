@@ -6,14 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.HeroFragment">
 
-    <Button
-        android:text="@string/btn_hero"
-        android:id="@+id/button_hero"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_generate_hero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:srcCompat="@drawable/idea"
+        app:layout_behavior="com.valdio.valdioveliu.floatingactionbuttonproject.Scrolling_Floating_Action_Button.FAB_Hide_on_Scroll"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RV_Characteristics"
@@ -21,9 +26,11 @@
         android:layout_height="0dp"
         android:paddingStart="40dp"
         android:paddingEnd="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_hero"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

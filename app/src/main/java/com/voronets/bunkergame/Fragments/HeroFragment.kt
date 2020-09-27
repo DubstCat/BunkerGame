@@ -3,9 +3,11 @@ package com.voronets.bunkergame.Fragments
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
-
+import android.view.animation.Animation
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.voronets.bunkergame.Adapters.CharactAdapter
 import com.voronets.bunkergame.Controllers.HeroLogic
 import com.voronets.bunkergame.DataClasses.CharactItem
@@ -22,6 +24,25 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        RV_Characteristics.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            private var isScrolledDown = false
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (newState == RecyclerView.SCROLL_STATE_SETTLING && isScrolledDown) { // Do something...
+                    btn_generate_hero.hide()
+
+                }
+                if (newState == RecyclerView.SCROLL_STATE_SETTLING && !isScrolledDown) { // Do something...
+                    btn_generate_hero.show()
+                }
+            }
+
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                isScrolledDown = dy > 0
+            }
+        })
+
         if (MainInfo.savedHeroes !=null){
             RV_Characteristics.layoutManager = LinearLayoutManager(context)
             val adapter = CharactAdapter(MainInfo.savedHeroes!!)
@@ -31,7 +52,7 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
 
         }
 
-        button_hero.setOnClickListener{
+        btn_generate_hero.setOnClickListener{
 
             AlertDialog.Builder(context)
                 .setTitle("Перегенерация персонажа")
@@ -84,7 +105,7 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
                 description = MainInfo.character.shuffled()[0]
             ),
             CharactItem(
-                name = "Доп инфа",
+                name = "Дополнительно",
                 description = MainInfo.extra_info.shuffled()[0]
             ),
             CharactItem(

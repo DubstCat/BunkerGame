@@ -22,7 +22,7 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
 
         text_view_catast.text = MainInfo.savedCatastText
 
-        button_catast.setOnClickListener{
+        btn_generate_catast.setOnClickListener{
             AlertDialog.Builder(context)
                 .setTitle("Перегенерация катастрофы")
                 .setMessage("Вы уверены, что хотите перегенерировать катастрофу?")
