@@ -20,6 +20,7 @@ import kotlin.random.Random
 /**
  * A simple [Fragment] subclass.
  */
+
 class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

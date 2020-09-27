@@ -27,7 +27,8 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
                 .setTitle("Перегенерация катастрофы")
                 .setMessage("Вы уверены, что хотите перегенерировать катастрофу?")
                 .setPositiveButton("Да") { _, _ ->
-                    text_view_catast.text = MainInfo.catast.shuffled()[0] +"" +
+                    text_view_catast_title.text = MainInfo.catast.keys.shuffled()[0]
+                    text_view_catast.text = MainInfo.catast.get(text_view_catast_title.text.toString()) +"" +
                             "\nВремя нахождения в бункере - ${Random.nextInt(1,50)} лет" +
                             "\nЗапасов воды и еды на ${Random.nextInt(1,50)} лет"+
                             "\nХарактеристика бункера - ${MainInfo.bonus_items.shuffled()[0]}"+
