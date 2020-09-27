@@ -22,7 +22,7 @@
     <TextView
         android:id="@+id/text_view_catast"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -31,6 +31,7 @@
         android:linksClickable="true"
         android:padding="5dp"
         android:text="Лучшая игра на свете"
+        android:textAlignment="viewStart"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

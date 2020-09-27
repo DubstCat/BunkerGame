@@ -20,7 +20,10 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        text_view_catast.text = MainInfo.savedCatastText
+        for ((key, value) in MainInfo.savedCatastText.entries) {
+            text_view_catast_title.text = key
+        }
+        text_view_catast.text = MainInfo.savedCatastText[text_view_catast_title.text.toString()]
 
         btn_generate_catast.setOnClickListener{
             AlertDialog.Builder(context)
@@ -34,7 +37,7 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
                             "\nХарактеристика бункера - ${MainInfo.bonus_items.shuffled()[0]}"+
                             "\n\nРазработчик приложения - t.me/DubsCat"
                     text_view_catast.movementMethod = LinkMovementMethod.getInstance()
-                    MainInfo.savedCatastText = text_view_catast.text.toString() }
+                    MainInfo.savedCatastText = hashMapOf(text_view_catast_title.text.toString() to text_view_catast.text.toString()) }
                 .setNeutralButton("Нет",null) .create().show()
         }
 
