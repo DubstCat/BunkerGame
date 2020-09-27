@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/bunker_app"
+        android:icon="@mipmap/ic_bunker"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/bunker_app"
+        android:roundIcon="@mipmap/ic_bunker_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
