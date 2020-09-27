@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.voronets.bunkergame.Controllers.CharactItemController
 import com.voronets.bunkergame.DataClasses.CharactItem
@@ -48,12 +49,14 @@ class CharactAdapter (
                 .setNeutralButton("Нет", null).create().show()
         }
 
+
         holder.itemView.apply {
             tv_charact_name.text = charactItems[position].name
             tv_charact_description.text = charactItems[position].description
             tv_charact_description.background = resources.getDrawable(backgroundsList.shuffled()[0])
+            }
         }
-    }
+
 
     override fun getItemViewType(position: Int): Int {
         return 0
@@ -62,10 +65,13 @@ class CharactAdapter (
     override fun rerollCharact(v: View) {
         when(v.tv_charact_name.text){
             "Профессия" -> v.tv_charact_description.text = MainInfo.professions.shuffled()[0]
+            "Способность к деторождению" -> v.tv_charact_description.text = MainInfo.reproduction.shuffled()[0]
             "Состояние здоровья" -> v.tv_charact_description.text = MainInfo.health.shuffled()[0]+" "+ Random.nextInt(10,100)+"%"
             "Хобби" ->v.tv_charact_description.text = MainInfo.hobby.shuffled()[0]
             "Телосложение" -> v.tv_charact_description.text = MainInfo.body.shuffled()[0]
             "Фобии" -> v.tv_charact_description.text = MainInfo.fear.shuffled()[0]
+            "Черты характера" -> v.tv_charact_description.text = MainInfo.character.shuffled()[0]
+            "Доп инфа" -> v.tv_charact_description.text = MainInfo.extra_info.shuffled()[0]
             "Багаж" -> v.tv_charact_description.text = MainInfo.bag.shuffled()[0]
             "Ориентация" -> {
                 when(v.tv_charact_description.text){
@@ -93,4 +99,6 @@ class CharactAdapter (
     fun atachView(RV:RecyclerView){
         this.mRecyclerView = RV
     }
+
+
 }
