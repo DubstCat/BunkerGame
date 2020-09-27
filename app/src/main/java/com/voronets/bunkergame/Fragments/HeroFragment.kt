@@ -28,6 +28,7 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
             adapter.atachView(RV_Characteristics)
             adapter.notifyItemInserted(MainInfo.savedHeroes!!.size-1)
             RV_Characteristics.adapter = adapter
+
         }
 
         button_hero.setOnClickListener{
@@ -55,7 +56,7 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
                 description = MainInfo.professions.shuffled()[0]
             ),
             CharactItem(
-                name = "Способность к деторождению",
+                name = "Фертильность",
                 description = MainInfo.reproduction.shuffled()[0]
             ),
             CharactItem(

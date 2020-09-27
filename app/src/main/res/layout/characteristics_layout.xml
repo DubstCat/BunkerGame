@@ -17,10 +17,10 @@
 
     <TextView
         android:id="@+id/tv_charact_description"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginTop="8dp"
-        android:background="@drawable/bg_text_cyan"
+        android:background="@drawable/bg_text_dark"
         android:gravity="fill_horizontal"
         android:singleLine="false"
         android:text="aaaaa"

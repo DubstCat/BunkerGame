@@ -3,10 +3,10 @@
 
     <item
         android:id="@+id/btn_fr_hero"
-        android:icon="?attr/actionModeCopyDrawable"
+        android:icon="@drawable/user"
         android:title="герой" />
     <item
         android:id="@+id/btn_fr_cat"
-        android:icon="@android:drawable/ic_dialog_alert"
+        android:icon="@drawable/alert"
         android:title="катастрофа" />
 </menu>

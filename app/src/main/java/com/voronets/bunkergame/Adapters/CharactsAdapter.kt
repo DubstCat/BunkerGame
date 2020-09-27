@@ -20,14 +20,7 @@ import kotlin.random.Random
 class CharactAdapter (
     private var charactItems:MutableList<CharactItem>
 ):RecyclerView.Adapter<CharactAdapter.CharactViewHolder>(), CharactItemController{
-    private var backgroundsList = listOf<Int>(
-        R.drawable.bg_text_red,
-        R.drawable.bg_text_orange,
-        R.drawable.bg_text_green,
-        R.drawable.bg_text_cyan,
-        R.drawable.bg_text_blue,
-        R.drawable.bg_text_purple
-    )
+
     private var mRecyclerView:RecyclerView? = null
 
     inner class CharactViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -53,7 +46,7 @@ class CharactAdapter (
         holder.itemView.apply {
             tv_charact_name.text = charactItems[position].name
             tv_charact_description.text = charactItems[position].description
-            tv_charact_description.background = resources.getDrawable(backgroundsList.shuffled()[0])
+
             }
         }
 
@@ -65,7 +58,7 @@ class CharactAdapter (
     override fun rerollCharact(v: View) {
         when(v.tv_charact_name.text){
             "Профессия" -> v.tv_charact_description.text = MainInfo.professions.shuffled()[0]
-            "Способность к деторождению" -> v.tv_charact_description.text = MainInfo.reproduction.shuffled()[0]
+            "Фертильность" -> v.tv_charact_description.text = MainInfo.reproduction.shuffled()[0]
             "Состояние здоровья" -> v.tv_charact_description.text = MainInfo.health.shuffled()[0]+" "+ Random.nextInt(10,100)+"%"
             "Хобби" ->v.tv_charact_description.text = MainInfo.hobby.shuffled()[0]
             "Телосложение" -> v.tv_charact_description.text = MainInfo.body.shuffled()[0]
