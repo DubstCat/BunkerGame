@@ -92,27 +92,42 @@ class CharactAdapter (
     override fun rerollCharact(v: View) {
         for(i in charactItems.indices)
         when(v.tv_charact_name.text){
+            "Пол" -> {v.tv_charact_description.text = arrayListOf("мужской","женский").shuffled()[0]
+                                MainInfo.savedHeroes!![0].description = v.tv_charact_description.text.toString()
+            }
+            "Возраст" -> {v.tv_charact_description.text = Random.nextInt(18,100).toString()
+                                MainInfo.savedHeroes!![1].description = v.tv_charact_description.text.toString()
+            }
             "Профессия" -> {v.tv_charact_description.text = MainInfo.professions.shuffled()[0]
-                            MainInfo.savedHeroes!![2].description = v.tv_charact_description.text.toString()}
+                                MainInfo.savedHeroes!![2].description = v.tv_charact_description.text.toString()
+            }
             "Фертильность" -> {v.tv_charact_description.text = MainInfo.reproduction.shuffled()[0]
-                                MainInfo.savedHeroes!![3].description = v.tv_charact_description.text.toString()}
+                                MainInfo.savedHeroes!![3].description = v.tv_charact_description.text.toString()
+            }
             "Ориентация" -> {v.tv_charact_description.text = MainInfo.orientation.shuffled()[0]
-                MainInfo.savedHeroes!![4].description = v.tv_charact_description.text.toString()
+                                MainInfo.savedHeroes!![4].description = v.tv_charact_description.text.toString()
             }
             "Состояние здоровья" -> {v.tv_charact_description.text = MainInfo.health.shuffled()[0]+" "+ Random.nextInt(10,100)+"%"
-                                MainInfo.savedHeroes!![5].description = v.tv_charact_description.text.toString()}
+                                MainInfo.savedHeroes!![5].description = v.tv_charact_description.text.toString()
+            }
             "Хобби" ->{v.tv_charact_description.text = MainInfo.hobby.shuffled()[0]
-                                MainInfo.savedHeroes!![6].description = v.tv_charact_description.text.toString()}
+                                MainInfo.savedHeroes!![6].description = v.tv_charact_description.text.toString()
+            }
             "Телосложение" -> {v.tv_charact_description.text = MainInfo.body.shuffled()[0]
-                                MainInfo.savedHeroes!![7].description = v.tv_charact_description.text.toString()}
+                                MainInfo.savedHeroes!![7].description = v.tv_charact_description.text.toString()
+            }
             "Фобии" -> {v.tv_charact_description.text = MainInfo.fear.shuffled()[0]
-                                MainInfo.savedHeroes!![8].description = v.tv_charact_description.text.toString()}
+                                MainInfo.savedHeroes!![8].description = v.tv_charact_description.text.toString()
+            }
             "Черты характера" -> {v.tv_charact_description.text = MainInfo.character.shuffled()[0]
-                                MainInfo.savedHeroes!![9].description = v.tv_charact_description.text.toString()}
-            "Доп инфа" -> {v.tv_charact_description.text = MainInfo.extra_info.shuffled()[0]
-                                MainInfo.savedHeroes!![10].description = v.tv_charact_description.text.toString()}
+                                MainInfo.savedHeroes!![9].description = v.tv_charact_description.text.toString()
+            }
+            "Дополнительно" -> {v.tv_charact_description.text = MainInfo.extra_info.shuffled()[0]
+                                MainInfo.savedHeroes!![10].description = v.tv_charact_description.text.toString()
+            }
             "Багаж" -> {v.tv_charact_description.text = MainInfo.bag.shuffled()[0]
-                                MainInfo.savedHeroes!![11].description = v.tv_charact_description.text.toString()}
+                                MainInfo.savedHeroes!![11].description = v.tv_charact_description.text.toString()
+            }
 
             "Карта №1"->{
                 charactItems.remove(

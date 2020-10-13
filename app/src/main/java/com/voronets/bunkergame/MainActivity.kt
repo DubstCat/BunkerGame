@@ -1,12 +1,16 @@
 package com.voronets.bunkergame
 
 import android.annotation.SuppressLint
+import android.content.ServiceConnection
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE
 import com.voronets.bunkergame.Fragments.CatastFragment
 import com.voronets.bunkergame.Fragments.HeroFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,15 +24,35 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var mAdView : AdView
 
+
+
+    lateinit var mInterstitialAd:InterstitialAd
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val requestConfiguration = MobileAds.getRequestConfiguration()
+            .toBuilder()
+            .build()
+        MobileAds.setRequestConfiguration(requestConfiguration)
+
+
         MobileAds.initialize(this) {}
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
+
+
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd.adUnitId = "ca-app-pub-2011493009274797/9417217683"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+
+        if (mInterstitialAd.isLoaded) {
+                mInterstitialAd.show()
+        } else {
+            Log.d("TAG", "The interstitial wasn't loaded yet.")
+        }
 
         val heroFragment = HeroFragment()
         val catastFragment = CatastFragment()

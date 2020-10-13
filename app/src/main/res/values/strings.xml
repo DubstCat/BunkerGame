@@ -10,7 +10,5 @@
         могут использовать в любое время. Игра идёт по скриншотам, так как при наличии карты действия \"перегенерация профессии\" и т. д. игрок ещё
         раз нажимает кнопку \"сгенерировать персонажа\", и просто оглашает всем новую характеристику.</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btn_hero">СГЕНЕРИРОВАТЬ ПЕРСОНАЖА</string>
 </resources>

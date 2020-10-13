@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "48025411551",
+    "firebase_url": "https://bunkergame-78480.firebaseio.com",
+    "project_id": "bunkergame-78480",
+    "storage_bucket": "bunkergame-78480.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48025411551:android:e16a51210f9a058215ae6a",
+        "android_client_info": {
+          "package_name": "com.voronets.bunkergame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "48025411551-fa4434sefq7re37p9vjqqfoprfddkn01.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.voronets.bunkergame",
+            "certificate_hash": "211368a073da5a129a51564aae17499b53596b8c"
+          }
+        },
+        {
+          "client_id": "48025411551-m548ti7jct78j7hvdc22i4nu9d6h70ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3la7QZQfNN_gMqGRlSpTj2LxviMmSubo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "48025411551-m548ti7jct78j7hvdc22i4nu9d6h70ck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
