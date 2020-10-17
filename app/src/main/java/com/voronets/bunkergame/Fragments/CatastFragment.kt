@@ -19,12 +19,19 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setCatastText()
+        bindListeners()
+    }
 
+    private fun setCatastText(){
         for ((key, value) in MainInfo.savedCatastText.entries) {
             text_view_catast_title.text = key
         }
         text_view_catast.text = MainInfo.savedCatastText[text_view_catast_title.text.toString()]
 
+    }
+
+    private fun bindListeners(){
         btn_generate_catast.setOnClickListener{
             AlertDialog.Builder(context)
                 .setTitle("Перегенерация катастрофы")
@@ -34,13 +41,21 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
                     text_view_catast.text = MainInfo.catast.get(text_view_catast_title.text.toString()) +"" +
                             "\nВремя нахождения в бункере - ${Random.nextInt(1,50)} лет" +
                             "\nЗапасов воды и еды на ${Random.nextInt(1,50)} лет"+
-                            "\nХарактеристика бункера - ${MainInfo.bonus_items.shuffled()[0]}"+
-                            "\n\nРазработчик приложения - t.me/DubsCat"
+                            "\nХарактеристика бункера - ${MainInfo.bonus_items.shuffled()[0]}"
+                    //+"\n\nРазработчик приложения - t.me/DubsCat"
                     text_view_catast.movementMethod = LinkMovementMethod.getInstance()
                     MainInfo.savedCatastText = hashMapOf(text_view_catast_title.text.toString() to text_view_catast.text.toString()) }
                 .setNeutralButton("Нет",null) .create().show()
         }
-
+        btn_generate_catast.setOnLongClickListener{
+            AlertDialog.Builder(context)
+                .setTitle("Правила игры")
+                .setMessage(getString(R.string.rules_text))
+                .setPositiveButton("Окей", null)
+                .create()
+                .show()
+            true
+        }
     }
 
 }
