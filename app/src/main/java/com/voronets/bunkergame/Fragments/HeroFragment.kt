@@ -79,60 +79,60 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
     override fun createHero(){
         val CharactList = mutableListOf(
             CharactItem(
-                name = "Пол",
-                description = arrayListOf("мужской", "женский").shuffled()[0]
+                name = getString(R.string.gender),
+                description = resources.getStringArray(R.array.gender).toList().shuffled()[0]
             ),
             CharactItem(
-                name = "Возраст",
+                name = getString(R.string.age),
                 description = Random.nextInt(18, 100).toString()
             ),
             CharactItem(
-                name = "Профессия",
-                description = MainInfo.professions.shuffled()[0]
+                name = getString(R.string.profession),
+                description = resources.getStringArray(R.array.professions).toList().shuffled()[0]
             ),
             CharactItem(
-                name = "Фертильность",
-                description = MainInfo.reproduction.shuffled()[0]
+                name = getString(R.string.fertility),
+                description = resources.getStringArray(R.array.reproduction).toList().shuffled()[0]
             ),
             CharactItem(
-                name = "Ориентация",
-                description =  MainInfo.orientation.shuffled()[0]
+                name = getString(R.string.orientation),
+                description =  resources.getStringArray(R.array.orientation).toList().shuffled()[0]
             ),
             CharactItem(
-                name = "Состояние здоровья",
-                description = MainInfo.health.shuffled()[0]+" "+ Random.nextInt(10,100)+"%"
+                name = getString(R.string.health),
+                description = resources.getStringArray(R.array.health).toList().shuffled()[0]+" "+ Random.nextInt(10,100)+"%"
             ),
             CharactItem(
-                name = "Телосложение",
-                description = MainInfo.body.shuffled()[0]
+                name = getString(R.string.body),
+                description = resources.getStringArray(R.array.body).toList().shuffled()[0]
             ),
             CharactItem(
-                name = "Фобии",
-                description = MainInfo.fear.shuffled()[0]
+                name = getString(R.string.fear),
+                description = resources.getStringArray(R.array.fear).toList().shuffled()[0]
             ),
             CharactItem(
-                name = "Хобби",
-                description = MainInfo.hobby.shuffled()[0]
+                name = getString(R.string.hobby),
+                description = resources.getStringArray(R.array.hobby).toList().shuffled()[0]
             ),
             CharactItem(
-                name = "Черты характера",
-                description = MainInfo.character.shuffled()[0]
+                name = getString(R.string.character),
+                description = resources.getStringArray(R.array.character).toList().shuffled()[0]
             ),
             CharactItem(
-                name = "Дополнительно",
-                description = MainInfo.extra_info.shuffled()[0]
+                name = getString(R.string.extra_info),
+                description = resources.getStringArray(R.array.extra_info).toList().shuffled()[0]
             ),
             CharactItem(
-                name = "Багаж",
-                description = MainInfo.bag.shuffled()[0]
+                name = getString(R.string.bag),
+                description = resources.getStringArray(R.array.bag).toList().shuffled()[0]
             ),
             CharactItem(
-                name = "Карта №1",
-                description = MainInfo.actions.shuffled()[0]
+                name = getString(R.string.action_1),
+                description = resources.getStringArray(R.array.actions).toList().shuffled()[0]
             ),
             CharactItem(
-                name = "Карта №2",
-                description = MainInfo.actions.shuffled()[0]
+                name = getString(R.string.action_2),
+                description = resources.getStringArray(R.array.actions).toList().shuffled()[0]
             )
         )
 
@@ -142,6 +142,7 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
         adapter.atachView(RV_Characteristics)
         adapter.notifyItemInserted(CharactList.size-1)
         RV_Characteristics.adapter = adapter
+
 
         MainInfo.savedHeroes = CharactList
     }

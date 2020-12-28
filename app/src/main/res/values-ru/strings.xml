@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Бункер</string>
+    <string name="rules_text">Итак, представьте, что произошла ужасная катастрофа. Вы попали в число счастливчиков, оказавшихся
+        в бункере. Возможно именно вам выпала роль основателя новой цивилизации.\n\nОдин игрок (так называемый ведущий) заходит во вкладку "катастрофа" и нажимает на кнопку с лампочкой.
+        Далее при нажатии той же самой кнопки
+        каждому игроку даётся персонаж с определёнными характеристиками. Игроки ходят по кругу (начиная с ведущего),
+        и каждый раскрывает по одной характеристике и обосновывает, почему именно его должны оставить в бункере. Всего в бункере должна остаться половина
+        игроков.
+        \n\nКарты действий (1 и 2) игроки
+        могут использовать в любое время. При раскрытии какой-либо характеристики игрок должен нажать на неё и некоторое время удерживать пока она не станет
+        прозрачной. Для перегенерации одной характеристики достаточно нажать на неё один раз, после чего откроется диалоговое окно.
+        \n\nДля повторного вызова окна с правилами нажмите и удерживайте кнопку с лампочкой.\n\nУдачи и весёлой игры!</string>к
+
+    <string name="btn_hero">СГЕНЕРИРОВАТЬ ПЕРСОНАЖА</string>
+    <string name="gender">Пол</string>
+    <string name="age">Возраст</string>
+    <string name="profession">Профессия</string>
+    <string name="fertility">Фертильность</string>
+    <string name="orientation">Ориентация</string>
+    <string name="health">Состояние здоровья</string>
+    <string name="body">Телосложение</string>
+    <string name="fear">Фобии</string>
+    <string name="hobby">Хобби</string>
+    <string name="character">Черты характера</string>
+    <string name="bag">Багаж</string>
+    <string name="action_2">Карта №2</string>
+    <array name="professions">
+        <item>Продавец оружия (+К багажу: Пистолет(разряженный))</item><item>Полицейский</item><item>Педиатр</item><item>Экономист</item><item>Инженер</item><item>Охранник</item><item>Кинолог</item><item>Пилот</item>
+        <item>Грузчик</item><item>Военный</item><item>Священник</item><item>Военный лётчик</item><item>Нейрохирург</item><item>Слесарь</item><item>Фермер</item><item>Гид</item><item>Сварщик</item>
+        <item>Дипломат (Может сделать враждебный бункер дружелюбным)</item><item>Учитель</item><item>Психолог</item><item>Дизайнер</item><item>Диетолог</item><item>Проктолог</item><item>Бухгалер</item><item>Геолог</item><item>Биофизик</item>
+        <item>Связист</item><item>Каскадёр</item><item>Блогер</item><item>Слесарь</item><item>Землекоп</item><item>Кузнец</item><item>Плотник</item><item>Сварщик</item><item>Шахтёр</item><item>Типограф</item><item>Таксист</item><item>Актёр</item><item>Певец</item><item>Изобретатель</item>
+        <item>Повар</item><item>Музыкант</item><item>Ювелир</item><item>Художник</item><item>Бармен</item><item>Библиотекарь</item><item>Няня</item><item>Официант</item><item>Парикмахер</item><item>Садовник</item><item>Уборщик</item><item>Педагог</item><item>Пекарь</item>
+        <item>Агроном</item><item>Животновод</item><item>Мясник</item><item>Тракторист</item><item>Водолаз</item><item>Барыга</item><item>Мошенник</item><item>Колхозник</item><item>Переводчик</item><item>Аналитик</item><item>Археолог</item><item>Стриптизёр</item><item>Дрессировщик</item>
+        <item>Охотник</item><item>Флорист</item><item>Столяр</item><item>Каменщик</item><item>Сапожник</item><item>Швея</item><item>Киллер</item><item>Курьер</item><item>Почтальон</item><item>Проститутка</item><item>Ботаник</item><item>Механик</item><item>Электрик</item><item>Филолог</item>
+        <item>Гитарист</item><item>Физик-ядерщик</item><item>Оператор</item><item>Стоматолог</item>
+        <item>Винодел</item><item>Сексолог</item><item>Юрист</item><item>Аллерголог</item><item>Хирург</item><item>Хакер</item><item>Биохимик</item><item>Кассир</item><item>Предприниматеь</item><item>Писатель</item>
+    </array>
+    <array name="reproduction">
+        <item>Плодовитый</item><item>Плодовитый</item><item>Плодовитый</item><item>Чайлдфри</item><item>Бесплоден</item>
+    </array>
+</resources>
