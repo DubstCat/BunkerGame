@@ -223,41 +223,17 @@
         <item> Nuclear War </item> <item> Bioterrorism </item> <item> Zombie Apocalypse </item> <item> Global Flood </item> <item> Simian Flu </item>
     </array>
     <array name = "catast_descriptions">
-    <item> The explosion of the Yellowstone supervolcano shook the Earth. The ash ejected into the atmosphere blocked the Sun for several months. A "nuclear winter" began on the planet, the average temperature dropped by 11 degrees, and five out of every six creatures inhabiting the Earth died. The climate has changed significantly. The planet is now in a global drought
-        \nPopulation Survivor Remaining: 7%
-        \nSurface destruction: 9%. </item>
-    <item> Intensive farming and soil degradation, coupled with drought, have resulted in dust storms that massively destroy crops and result in crop failures and a significant decrease in food supplies. The oxygen concentration in the atmosphere drops and the climate worsens significantly
-        \nPopulation Survival: 17%
-        \nSurface destruction: 4%. </item>
-    <item> A huge space object falls onto the planet, creating a powerful shock wave that blows everything in its path. A large-scale crater forms at the site of the fall. Strong earthquakes and tsunamis are everywhere. Fires cover the entire Earth, and due to the amount of dust that has risen into the atmosphere, a long \ "nuclear winter \" is coming on the planet
-        Population Survivor Remaining: 30%
-        Surface destruction: 22%. </item>
-    <item> The military working on the project inadvertently opened the door to another dimension. A thick, unnatural white mist slowly began to fill vast areas of the surface. The visibility is almost zero. Unknown monsters began to roam the world, which can destroy all of humanity. The destruction is global.
-        \nPopulation Survivor Remaining: 1%
-        \nSurface destruction: 26%. </item>
-    <item> Artificial intelligence, which was conceived to control defense systems, failed and considered humanity a great danger. This led to the fact that artificial intelligence turned off the instruction \ "do not kill a person \" and took control of the control procedures for military robots that began to exterminate humanity. A supercomputer took over the planet, the surviving people had to hide in old bunkers
-        \nPopulation Surviving Remain: 4%
-        \nSurface destruction: 32%. </item>
-    <item> As a result of the use of chemical and bacteriological weapons, the microbiological composition of the soil was disrupted, the ecological balance changed significantly, plants, soil and water were poisoned. A small percentage of living beings inhabiting it remained on Earth
-        \nPopulation Survivor Remaining: 1%
-        \nSurface destruction: 10%. </item>
-    <item> Interplanetary vehicles fall to the surface of the planet one after another. The militarys weapons are powerless against them, and gradually the aliens exterminate most of the population. After leaving the bunker, the vast majority of aliens died due to their inability to microorganisms that inhabit the Earth.
-        \nPopulation Survivor Remaining: 1%
-        \nSurface destruction: 18% </item>
-    <item> Several warring parties simultaneously launched a volley of nuclear warheads at each other. After the explosions, many people died and huge fires broke out. Nuclear dust enveloped the planet, blocking sunlight and leading to a long nuclear winter. There are problems with soil, water and vegetation on the surface, chemical treatment is needed
-        \nRemains surviving population: 28%
-        \nSurface destruction: 44%. </item>
-    <item> While creating a more infectious and deadly strain of the virus within the walls of the research laboratory, one of the workers accidentally contracted it, as a result of which the virus went out of control and spread very quickly throughout the planet. A large percentage of all living things died. Other creatures and plants have developed mutations
-        \nPopulation Survivor Remaining: 29%
-        \nSurface destruction: 10%. </item>
-    <item> An unknown pathogen caused people to turn into bloodthirsty zombies. Collapse of the system. The hospitals are no longer functional. Total panic, the army starts shooting to kill while trying to leave the quarantine zone. The authorities can no longer control the situation. Total looting and anarchy begins. After leaving the bunker, a small percentage of zombies will survive
-        \nPopulation Survivor: 21%
-        \nSurface destruction: 12%. </item>
-    <item> Due to human activities, all polar snows have melted, covering the entire Earth with water. The climate has been seriously disturbed, the tropics are now everywhere. New species of plants and large insects have appeared. After leaving the bunker, many of the survivors were retrained into money changers, merchants and bandits who plow the water and commit robberies in organized groups
-        \nPopulation Survival: 25%
-        \nSurface destruction: 1%. </item>
-    <item> A strain of Alzheimers "cure" created by scientists eventually became fatal to humans, leading to the Simian flu pandemic and the rise of evolved monkeys. All the remaining people are immune to the virus, but it can mutate. A larger percentage of monkeys are hostile to humans
-        \nPopulation Survival: 4%
-        \nSurface destruction: 24%. </item>
+    <item> The explosion of the Yellowstone supervolcano shook the Earth. The ash ejected into the atmosphere blocked the Sun for several months. A "nuclear winter" began on the planet, the average temperature dropped by 11 degrees, and five out of every six creatures inhabiting the Earth died. The climate has changed significantly. The planet is now in a global drought \nPopulation Survivor Remaining: 7% \nSurface destruction: 9%. </item>
+    <item> Intensive farming and soil degradation, coupled with drought, have resulted in dust storms that massively destroy crops and result in crop failures and a significant decrease in food supplies. The oxygen concentration in the atmosphere drops and the climate worsens significantly \nPopulation Survival: 17% \nSurface destruction: 4%. </item>
+    <item> A huge space object falls onto the planet, creating a powerful shock wave that blows everything in its path. A large-scale crater forms at the site of the fall. Strong earthquakes and tsunamis are everywhere. Fires cover the entire Earth, and due to the amount of dust that has risen into the atmosphere, a long \ "nuclear winter \" is coming on the planet \nPopulation Survivor Remaining: 30% \nSurface destruction: 22%. </item>
+    <item> The military working on the project inadvertently opened the door to another dimension. A thick, unnatural white mist slowly began to fill vast areas of the surface. The visibility is almost zero. Unknown monsters began to roam the world, which can destroy all of humanity. The destruction is global. \nPopulation Survivor Remaining: 1%\nSurface destruction: 26%. </item>
+    <item> Artificial intelligence, which was conceived to control defense systems, failed and considered humanity a great danger. This led to the fact that artificial intelligence turned off the instruction \ "do not kill a person \" and took control of the control procedures for military robots that began to exterminate humanity. A supercomputer took over the planet, the surviving people had to hide in old bunkers \nPopulation Surviving Remain: 4% \nSurface destruction: 32%. </item>
+    <item> As a result of the use of chemical and bacteriological weapons, the microbiological composition of the soil was disrupted, the ecological balance changed significantly, plants, soil and water were poisoned. A small percentage of living beings inhabiting it remained on Earth \nPopulation Survivor Remaining: 1% \nSurface destruction: 10%. </item>
+    <item> Interplanetary vehicles fall to the surface of the planet one after another. The militarys weapons are powerless against them, and gradually the aliens exterminate most of the population. After leaving the bunker, the vast majority of aliens died due to their inability to microorganisms that inhabit the Earth. \nPopulation Survivor Remaining: 1% \nSurface destruction: 18% </item>
+    <item> Several warring parties simultaneously launched a volley of nuclear warheads at each other. After the explosions, many people died and huge fires broke out. Nuclear dust enveloped the planet, blocking sunlight and leading to a long nuclear winter. There are problems with soil, water and vegetation on the surface, chemical treatment is needed \nRemains surviving population: 28%\n Surface destruction: 44%. </item>
+    <item> While creating a more infectious and deadly strain of the virus within the walls of the research laboratory, one of the workers accidentally contracted it, as a result of which the virus went out of control and spread very quickly throughout the planet. A large percentage of all living things died. Other creatures and plants have developed mutations \nPopulation Survivor Remaining: 29% \nSurface destruction: 10%. </item>
+    <item> An unknown pathogen caused people to turn into bloodthirsty zombies. Collapse of the system. The hospitals are no longer functional. Total panic, the army starts shooting to kill while trying to leave the quarantine zone. The authorities can no longer control the situation. Total looting and anarchy begins. After leaving the bunker, a small percentage of zombies will survive \nPopulation Survivor: 21% \nSurface destruction: 12%. </item>
+    <item> Due to human activities, all polar snows have melted, covering the entire Earth with water. The climate has been seriously disturbed, the tropics are now everywhere. New species of plants and large insects have appeared. After leaving the bunker, many of the survivors were retrained into money changers, merchants and bandits who plow the water and commit robberies in organized groups \nPopulation Survival: 25% \nSurface destruction: 1%. </item>
+    <item> A strain of Alzheimers "cure" created by scientists eventually became fatal to humans, leading to the Simian flu pandemic and the rise of evolved monkeys. All the remaining people are immune to the virus, but it can mutate. A larger percentage of monkeys are hostile to humans \nPopulation Survival: 4% \nSurface destruction: 24%. </item>
     </array>
 </resources>
