@@ -4,9 +4,9 @@
     <item
         android:id="@+id/btn_fr_hero"
         android:icon="@drawable/user"
-        android:title="персонаж" />
+        android:title="@string/navbar_character" />
     <item
         android:id="@+id/btn_fr_cat"
         android:icon="@drawable/alert"
-        android:title="катастрофа" />
+        android:title="@string/navbar_catast" />
 </menu>

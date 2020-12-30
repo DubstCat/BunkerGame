@@ -44,5 +44,4 @@ object MainInfo{
                 "Разрушения на поверхности: 24%.")
 
     var savedCatastText= hashMapOf<String, String>()
-    var savedHeroes:MutableList<CharactItem>?=null
 }

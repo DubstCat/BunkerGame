@@ -1,6 +1,7 @@
 package com.voronets.bunkergame
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setAds()
         setNavigation()
-        showRules()
+        GameRules.showRules(this)
         }
 
 
@@ -67,19 +68,12 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.btn_fr_hero -> setCurrentFragment(heroFragment)
-                R.id.btn_fr_cat -> setCurrentFragment(catastFragment)
+                R.id.btn_fr_hero -> {setCurrentFragment(heroFragment)
+                catastFragment.onSaveInstanceState(Bundle())}
+                R.id.btn_fr_cat -> {setCurrentFragment(catastFragment)
+                heroFragment.onSaveInstanceState(Bundle())}
             }
             true
         }
-    }
-    private fun showRules(){
-        AlertDialog.Builder(this)
-            .setTitle("Правила игры")
-            .setMessage(getString(R.string.rules_text))
-            .setPositiveButton("Понял", null)
-            .create()
-            .show()
-
     }
     }

@@ -7,6 +7,7 @@ import android.text.method.LinkMovementMethod
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.voronets.bunkergame.DataClasses.MainInfo
+import com.voronets.bunkergame.GameRules
 import com.voronets.bunkergame.R
 import kotlinx.android.synthetic.main.fragment_catast.*
 import kotlin.random.Random
@@ -23,7 +24,7 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
     }
 
     private fun setCatastText(){
-        for ((key, value) in MainInfo.savedCatastText.entries) {
+        for ((key) in MainInfo.savedCatastText.entries) {
             text_view_catast_title.text = key
         }
         text_view_catast.text = MainInfo.savedCatastText[text_view_catast_title.text.toString()]
@@ -33,28 +34,31 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
     @SuppressLint("SetTextI18n")
     private fun bindListeners(){
         btn_generate_catast.setOnClickListener{
-            AlertDialog.Builder(context)
-                .setTitle("Перегенерация катастрофы")
-                .setMessage("Вы уверены, что хотите перегенерировать катастрофу?")
-                .setPositiveButton("Да") { _, _ ->
-                    text_view_catast_title.text = MainInfo.catast.keys.shuffled()[0]
-                    text_view_catast.text = MainInfo.catast.get(text_view_catast_title.text.toString()) +"" +
-                            "\nВремя нахождения в бункере - ${Random.nextInt(1,50)} лет" +
-                            "\nЗапасов воды и еды на ${Random.nextInt(1,50)} лет"+
-                            "\nХарактеристика бункера - ${resources.getStringArray(R.array.bonus_items).toList().shuffled()[0]}"
-                    text_view_catast.movementMethod = LinkMovementMethod.getInstance()
-                    MainInfo.savedCatastText = hashMapOf(text_view_catast_title.text.toString() to text_view_catast.text.toString()) }
-                .setNeutralButton("Нет",null) .create().show()
+            generateCatast()
         }
         btn_generate_catast.setOnLongClickListener{
-            AlertDialog.Builder(context)
-                .setTitle("Правила игры")
-                .setMessage(getString(R.string.rules_text))
-                .setPositiveButton("Окей", null)
-                .create()
-                .show()
+            GameRules.showRules(context!!)
             true
         }
+    }
+
+    fun generateCatast(){
+        AlertDialog.Builder(context)
+            .setTitle(getString(R.string.catast_generation))
+            .setMessage(getString(R.string.catastrophe_dialog))
+            .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                val catastTitles = context?.resources?.getStringArray(R.array.catast_titles)?.toList()
+                val catastDescriptions = context?.resources?.getStringArray(R.array.catast_descriptions)?.toList()
+                text_view_catast_title.text = catastTitles!!.shuffled()[0]
+                text_view_catast.text = catastDescriptions!![catastTitles.indexOf(element = text_view_catast_title.text.toString())]+
+                        getString(R.string.time_in_bunker) +" "+ Random.nextInt(1,50) +" "+ getString(R.string.years)+
+                        getString(R.string.food_and_water_remain) +" "+ Random.nextInt(1, 50) +" "+ getString(R.string.years)+
+                        getString(R.string.bunker_extra) +" "+ resources.getStringArray(R.array.bonus_items).toList().shuffled()[0]
+                text_view_catast.movementMethod = LinkMovementMethod.getInstance()
+                MainInfo.savedCatastText = hashMapOf(text_view_catast_title.text.toString() to text_view_catast.text.toString()) }
+            .setNeutralButton(getString(R.string.No),null) .create().show()
+
+
     }
 
 }
