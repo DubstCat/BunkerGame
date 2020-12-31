@@ -7,7 +7,7 @@ import android.text.method.LinkMovementMethod
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.voronets.bunkergame.DataClasses.MainInfo
+import com.voronets.bunkergame.DataClasses.HeroSingleton
 import com.voronets.bunkergame.GameRules
 import com.voronets.bunkergame.R
 import kotlinx.android.synthetic.main.fragment_catast.*
@@ -22,10 +22,10 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindListeners()
-        if (arguments==null){
+        if (HeroSingleton.savedCatast==null){
             generateCatast()
         }else
-            setCatastText(arguments)
+            setCatastText(HeroSingleton.savedCatast)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,14 +33,13 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
         retainInstance = true
     }
 
-    private fun setCatastText(bundle: Bundle?){
-        val catastMap = bundle?.getSerializable(KEY_CATAST_MAP) as? HashMap<String, String>
+    private fun setCatastText(catastMap: HashMap<String, String>?){
+
         Log.d("TAG", ""+catastMap)
         for ((key) in catastMap!!.entries) {
             text_view_catast_title.text = key
         }
         text_view_catast.text = catastMap[text_view_catast_title.text.toString()]
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -69,10 +68,6 @@ class CatastFragment : Fragment(R.layout.fragment_catast) {
                 getString(R.string.food_and_water_remain) +" "+ Random.nextInt(1, 50) +" "+ getString(R.string.years)+
                 getString(R.string.bunker_extra) +" "+ resources.getStringArray(R.array.bonus_items).toList().shuffled()[0]
         text_view_catast.movementMethod = LinkMovementMethod.getInstance()
-        val args = Bundle()
-        args.putSerializable(KEY_CATAST_MAP, hashMapOf(text_view_catast_title.text.toString() to text_view_catast.text.toString()))
-        arguments = args
+        HeroSingleton.savedCatast = hashMapOf(text_view_catast_title.text.toString() to text_view_catast.text.toString())
     }
-
-
 }

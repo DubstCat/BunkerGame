@@ -1,10 +1,8 @@
 package com.voronets.bunkergame
 
 import android.annotation.SuppressLint
-import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.gms.ads.AdRequest
@@ -31,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         setAds()
         setNavigation()
         GameRules.showRules(this)
-        }
+    }
 
 
     private fun setCurrentFragment(fragment:Fragment){
@@ -69,9 +67,9 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.btn_fr_hero -> {setCurrentFragment(heroFragment)
-                catastFragment.onSaveInstanceState(Bundle())}
+                }
                 R.id.btn_fr_cat -> {setCurrentFragment(catastFragment)
-                heroFragment.onSaveInstanceState(Bundle())}
+                }
             }
             true
         }

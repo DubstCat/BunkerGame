@@ -3,7 +3,6 @@ package com.voronets.bunkergame.Fragments
 import android.app.AlertDialog
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,9 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.voronets.bunkergame.Controllers.CharactItemController
 import com.voronets.bunkergame.Controllers.HeroLogic
 import com.voronets.bunkergame.DataClasses.CharactItem
-import com.voronets.bunkergame.DataClasses.MainInfo
+import com.voronets.bunkergame.DataClasses.HeroSingleton
 import com.voronets.bunkergame.GameRules
-import com.voronets.bunkergame.MainActivity
 import com.voronets.bunkergame.R
 import kotlinx.android.synthetic.main.characteristics_layout.view.*
 import kotlinx.android.synthetic.main.fragment_hero.*
@@ -32,39 +30,25 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
     lateinit var mDescriptions:Array<Any>
     var mCharactList: ArrayList<CharactItem>?=null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d("TAG", "HeroFragment onCreate")
-        super.onCreate(savedInstanceState)
-        updateLists()
-        if(savedInstanceState!=null)
-            mCharactList = savedInstanceState.getSerializable(KEY_CHARACT_LIST) as ArrayList<CharactItem>
-        if(mCharactList == null) {
-            mCharactList = arrayListOf<CharactItem>()
-            for (i in mNames.indices)
-                mCharactList!!.add(
-                    CharactItem(
-                        name = getString(mNames[i]),
-                        description = mDescriptions[i].toString()
-                    )
-                )
-        }
-        retainInstance = true
-    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        updateLists()
+        if(HeroSingleton.savedHero!=null)
+            mCharactList = HeroSingleton.savedHero
+        else {
+            createHero()
+        }
         bindListeners()
         bindRecyclerView()
 
     }
     private fun bindRecyclerView(){
-
             RV_Characteristics.layoutManager = LinearLayoutManager(context)
             val adapter = CharactAdapter(mCharactList!!.toMutableList())
             adapter.atachView(RV_Characteristics)
             adapter.notifyItemInserted(mCharactList!!.size-1)
             RV_Characteristics.adapter = adapter
-
-
     }
     private fun bindListeners(){
         RV_Characteristics.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -108,11 +92,7 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
         adapter.atachView(RV_Characteristics)
         adapter.notifyItemInserted(mCharactList!!.size-1)
         RV_Characteristics.adapter = adapter
-
-        val args = Bundle()
-        args.putSerializable(KEY_CHARACT_LIST, mCharactList!!.toTypedArray())
-        onSaveInstanceState(args)
-        //MainInfo.savedHeroes = charactList
+        HeroSingleton.savedHero = mCharactList
     }
 
     inner class CharactAdapter (
@@ -128,6 +108,7 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.characteristics_layout, parent, false)
             return CharactViewHolder(view)
         }
+
         override fun getItemCount(): Int = charactItems.size
 
         override fun onBindViewHolder(holder: CharactViewHolder, position: Int) {
@@ -160,16 +141,19 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
                             description = charactItems[position].description,
                             isActivated = true
                         )
-                        //MainInfo.savedHeroes = charactItems
+                        mCharactList?.clear()
+                        mCharactList?.addAll(charactItems)
+
                     }else{
                         charactItems[position] = CharactItem(
                             name = charactItems[position].name,
                             description = charactItems[position].description,
                             isActivated = false
                         )
-                        //MainInfo.savedHeroes = charactItems
+                        mCharactList?.clear()
+                        mCharactList?.addAll(charactItems)
                     }
-                    //MainInfo.savedHeroes = charactItems
+                    HeroSingleton.savedHero = mCharactList
                     notifyDataSetChanged()
                     true
                 }
@@ -182,7 +166,7 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
             updateLists()
             charactItems[pos].description = mDescriptions[pos].toString()
             mRecyclerView!!.adapter!!.notifyDataSetChanged()
-            //MainInfo.savedHeroes = charactItems
+            HeroSingleton.savedHero = mCharactList
         }
         fun atachView(RV:RecyclerView){
             this.mRecyclerView = RV
@@ -208,12 +192,5 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
             resources.getStringArray(R.array.actions).toList().shuffled()[0],
             resources.getStringArray(R.array.actions).toList().shuffled()[0]
         )
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        Log.d("TAG", "HeroFragment onSaveInstanceState")
-        super.onSaveInstanceState(outState)
-        outState.putSerializable(KEY_CHARACT_LIST, mCharactList)
-
     }
 }

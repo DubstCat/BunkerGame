@@ -219,7 +219,7 @@
     </array>
     <array name = "catast_titles">
         <item>Supervolcano</item> <item> Environmental disaster and global famine </item> <item> Meteorite </item> <item> Arrow Project </item>
-        <item>Supercomputer</item> <item> Chemical Warfare </item> <item> The alien race \ n decided to take over the Earth </item>
+        <item>Supercomputer</item> <item> Chemical Warfare </item> <item> The alien race \n decided to take over the Earth </item>
         <item> Nuclear War </item> <item> Bioterrorism </item> <item> Zombie Apocalypse </item> <item> Global Flood </item> <item> Simian Flu </item>
     </array>
     <array name = "catast_descriptions">
