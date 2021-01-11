@@ -1,123 +1,239 @@
 <resources>
-    <string name="app_name">Бункер</string>
-    <string name="rules_text">Итак, представьте, что произошла ужасная катастрофа. Вы попали в число счастливчиков, оказавшихся
-        в бункере. Возможно именно вам выпала роль основателя новой цивилизации.\n\nОдин игрок (так называемый ведущий) заходит во вкладку "катастрофа" и нажимает на кнопку с лампочкой.
-        Далее при нажатии той же самой кнопки
-        каждому игроку даётся персонаж с определёнными характеристиками. Игроки ходят по кругу (начиная с ведущего),
-        и каждый раскрывает по одной характеристике и обосновывает, почему именно его должны оставить в бункере. Всего в бункере должна остаться половина
-        игроков.
-        \n\nКарты действий (1 и 2) игроки
-        могут использовать в любое время. При раскрытии какой-либо характеристики игрок должен нажать на неё и некоторое время удерживать пока она не станет
-        прозрачной. Для перегенерации одной характеристики достаточно нажать на неё один раз, после чего откроется диалоговое окно.
-        \n\nДля повторного вызова окна с правилами нажмите и удерживайте кнопку с лампочкой.\n\nУдачи и весёлой игры!</string>к
+    <string name="app_name">Bunker</string>
+    <string name = "rules_text"> So, imagine a terrible disaster happened. You are among the lucky ones who find themselves
+        in the bunker. Perhaps you were the founder of a new civilization.\n\nOne player (the so-called leader) enters the "disaster" tab and presses the button with the light bulb.
+        Then when you press the same button
+        each player is given a character with certain characteristics. Players walk in circles (starting with the leader),
+        and each reveals one characteristic and justifies why it should be left in the bunker. In total, half should remain in the bunker
+        players.
+        \n\nAction cards (1 and 2) players
+        can be used at any time. When revealing any characteristic, the player must click on it and hold it for a while until it becomes
+        transparent. To regenerate one characteristic, just click on it once, after which a dialog box will open.
+        \n\nTo re-open the rules window, press and hold the light button.\n\nGood luck and fun playing! </string>
 
-    <string name="btn_hero">СГЕНЕРИРОВАТЬ ПЕРСОНАЖА</string>
-    <string name="gender">Пол</string>
-    <string name="age">Возраст</string>
-    <string name="profession">Профессия</string>
-    <string name="fertility">Фертильность</string>
-    <string name="orientation">Ориентация</string>
-    <string name="health">Состояние здоровья</string>
-    <string name="body">Телосложение</string>
-    <string name="fear">Фобии</string>
-    <string name="hobby">Хобби</string>
-    <string name="character">Черты характера</string>
-    <string name="extra_info">Дополнительно</string>
-    <string name="bag">Багаж</string>
-    <string name="action_1">Карта №1</string>
-    <string name="action_2">Карта №2</string>
-    <string name="rules">Правила игрыыыы</string>
-    <string name="rules_accept">Понял</string>
-    <string name="navbar_character">персонаж</string>
-    <string name="navbar_catast">катастрофа</string>
-    <string name="catast_generation">Перегенерация катастрофы</string>
-    <string name="yes">Да</string>
-    <string name="No">Нет</string>
-    <string name="catastrophe_dialog">Вы уверены, что хотите перегенерировать катастрофу?</string>
-    <string name="time_in_bunker">\nВремя нахождения в бункере - </string>
-    <string name="years">лет</string>
-    <string name="food_and_water_remain">\nЗапасов воды и еды на </string>
-    <string name="bunker_extra">\nХарактеристика бункера - </string>
-    <string name="regeneration">Перегенерация</string>
-    <string name="charact_regeneration">Вы уверены, что хотите перегенерировать характеристику \"</string>
-    <string name="hero_generation">Генерация персонажа</string>
-    <string name="hero_regeneration">Вы уверены, что хотите cгенерировать персонажа?</string>
+    <string name="btn_hero">GENERATE A HERO</string>
+    <string name="gender">Gender</string>
+    <string name="age">Age</string>
+    <string name="profession">Profession</string>
+    <string name="fertility">Fertility</string>
+    <string name="orientation">Orientation</string>
+    <string name="health">Health</string>
+    <string name="body">Body</string>
+    <string name="fear">Fears</string>
+    <string name="hobby">Hobby</string>
+    <string name="character">Traits</string>
+    <string name="extra_info">Extra info</string>
+    <string name="bag">Bag</string>
+    <string name="action_1">Action №1</string>
+    <string name="action_2">Action №2</string>
+    <string name="rules">Rules</string>
+    <string name="rules_accept">Accept</string>
+    <string name="navbar_character">hero</string>
+    <string name="navbar_catast">catastrophe</string>
+    <string name="catast_generation">Catastrophe generation</string>
+    <string name="catastrophe_dialog">Are you sure?</string>
+    <string name="yes">Yes</string>
+    <string name="No">No</string>
+    <string name = "time_in_bunker"> \nTime in bunker - </string>
+    <string name = "years"> years </string>
+    <string name = "food_and_water_remain"> \nFood and water supplies - </string>
+    <string name = "bunker_extra"> \nBunker characteristic - </string>
+    <string name = "regeneration"> Regeneration </string>
+    <string name = "charact_regeneration"> Are you sure you want to regenerate the characteristic \"</string>
+    <string name = "hero_generation"> Character Generation </string>
+    <string name = "hero_regeneration"> Are you sure you want to generate a character? </string>
     <array name="professions">
-        <item>Продавец оружия (+К багажу: Пистолет(разряженный))</item><item>Полицейский</item><item>Педиатр</item><item>Экономист</item><item>Инженер</item><item>Охранник</item><item>Кинолог</item><item>Пилот</item>
-        <item>Грузчик</item><item>Военный</item><item>Священник</item><item>Военный лётчик</item><item>Нейрохирург</item><item>Слесарь</item><item>Фермер</item><item>Гид</item><item>Сварщик</item>
-        <item>Дипломат (Может сделать враждебный бункер дружелюбным)</item><item>Учитель</item><item>Психолог</item><item>Дизайнер</item><item>Диетолог</item><item>Проктолог</item><item>Бухгалер</item><item>Геолог</item><item>Биофизик</item>
-        <item>Связист</item><item>Каскадёр</item><item>Блогер</item><item>Слесарь</item><item>Землекоп</item><item>Кузнец</item><item>Плотник</item><item>Сварщик</item><item>Шахтёр</item><item>Типограф</item><item>Таксист</item><item>Актёр</item><item>Певец</item><item>Изобретатель</item>
-        <item>Повар</item><item>Музыкант</item><item>Ювелир</item><item>Художник</item><item>Бармен</item><item>Библиотекарь</item><item>Няня</item><item>Официант</item><item>Парикмахер</item><item>Садовник</item><item>Уборщик</item><item>Педагог</item><item>Пекарь</item>
-        <item>Агроном</item><item>Животновод</item><item>Мясник</item><item>Тракторист</item><item>Водолаз</item><item>Барыга</item><item>Мошенник</item><item>Колхозник</item><item>Переводчик</item><item>Аналитик</item><item>Археолог</item><item>Стриптизёр</item><item>Дрессировщик</item>
-        <item>Охотник</item><item>Флорист</item><item>Столяр</item><item>Каменщик</item><item>Сапожник</item><item>Швея</item><item>Киллер</item><item>Курьер</item><item>Почтальон</item><item>Проститутка</item><item>Ботаник</item><item>Механик</item><item>Электрик</item><item>Филолог</item>
-        <item>Гитарист</item><item>Физик-ядерщик</item><item>Оператор</item><item>Стоматолог</item>
-        <item>Винодел</item><item>Сексолог</item><item>Юрист</item><item>Аллерголог</item><item>Хирург</item><item>Хакер</item><item>Биохимик</item><item>Кассир</item><item>Предприниматеь</item><item>Писатель</item>
+        <item> Weapon dealer (+ Baggage: Pistol (unloaded)) </item> <item> Policeman </item> <item> Pediatrician </item>
+        <item> Economist </item> <item> Engineer </item > <item> Guard </item> <item> Cynologist </item> <item> Pilot </item>
+        <item> Loader</item><item> Military</item><item> Priest</item> <item> Military Pilot </item> <item> Neurosurgeon </item>
+        <item> Locksmith </item> <item> Farmer </item> <item> Guide </item> <item> Welder </item>
+        <item> Diplomat (Can make a hostile bunker friendly) </item> <item> Teacher </item> <item> Psychologist </item> <item> Designer </item>
+        <item> Nutritionist </item> <item> Proctologist </item> <item> Accountant </item> <item> Geologist </item> <item> Biophysicist </item>
+        <item>Communicator</item><item> Stuntman</item><item> Blogger</item><item> Locksmith</item><item> Digger</item> <item> Blacksmith </item> <item > Carpenter </item> <item> Welder </item> <item> Miner </item> <item> Typographer </item> <item> Taxi Driver </item> <item> Actor </item> <item> Singer </item> <item> Inventor </item>
+        <item>Cooker</item><item>Musician</item><item>Jeweller</item><item> Artist</item><item> Barman</item> <item> Librarian </item>
+        <item > Nanny </item> <item> Waiter </item> <item> Hairdresser </item> <item> Gardener </item> <item> Cleaner </item> <item> Educator </item> <item> Baker </item>
+        <item> Agronomist</item><item> Animal Breeder</item><item> Butcher</item><item> Tractor Operator</item><item> Diver</item>
+        <item> Husky </item> <item > Swindler </item> <item> Collective farmer </item> <item> Translator </item> <item> Analyst </item>
+        <item> Archaeologist </item> <item> Stripper </item> <item> Trainer </item>
+        <item>Hunter</item><item> Florist</item><item> Joiner</item><item> Bricklayer</item><item> Shoemaker</item> <item> Seamstress </item>
+        <item > Killer </item> <item> Courier </item> <item> Postman </item> <item> Prostitute </item> <item> Botanist </item>
+        <item> Mechanic </item> <item> Electrician </item> <item> Philologist </item>
+        <item>Guitarist</item><item> Nuclear Physicist</item><item> Operator</item> <item> Dentist </item>
+        <item> Winemaker</item><item>Sexologist</item><item> Lawyer</item><item> Allergist</item><item>Surgeon</item> <item> Hacker </item>
+        <item > Biochemist </item> <item> Cashier </item> <item> Entrepreneur </item> <item> Writer </item>
     </array>
     <array name="reproduction">
-        <item>Плодовитый</item><item>Плодовитый</item><item>Плодовитый</item><item>Чайлдфри</item><item>Бесплоден</item>
+        <item> Fertile</item><item> Fertile</item><item> Fertile</item><item> Childfree</item> <item> Barren </item>
     </array>
     <array name="orientation">
-        <item>Гомосексуальность</item><item>Гетеросексуальность</item><item>Гетеросексуальность</item><item>Гетеросексуальность</item><item>Гетеросексуальность</item>
+        <item>Homosexuality</item><item>Heterosexuality</item><item>Heterosexuality</item><item>Heterosexuality</item> <item> Heterosexuality </item>
     </array>
     <array name="health">
-        <item>ВИЧ</item><item>авитаминоз</item><item>алкоголизм</item><item>аллергия на животных</item><item>анорексия</item><item>астма</item><item>бессонница</item>
-        <item>биполярное расстройство</item><item>болезнь Альцгеймера</item><item>ветрянка</item><item>гайморит</item><item>гастрит</item><item>гемофилия</item><item>гепатит B</item><item>глаукома</item><item>глухонемота</item>
-        <item>дальтонизм</item><item>депрессия</item><item>диарея</item><item>заикание</item><item>кариес</item><item>косоглазие</item><item>межпозвоночная грыжа</item><item>мигрень</item><item>мочекаменная болезнь</item><item>наркомания</item>
-        <item>недержание мочи</item><item>ожирение</item><item>остеохондроз</item><item>отсутствие ноги</item><item>отсутствие руки</item><item>паранойя</item><item>плоскостопие</item><item>пневмония</item><item>простуда</item>
-        <item>псориаз</item><item>птичий грипп</item><item>рак крови</item><item>рак лёгкого</item><item>сахарный диабет второго типа</item><item>сахарный диабет первого типа</item><item>синдром Туретта</item>
-        <item>слепота</item><item>туберкулёз</item><item>умственная отсталость</item><item>цинга</item><item>шизофрения</item><item>эпилепсия</item><item>язва желудка</item><item>порок сердца</item><item>аллергия на пыль</item>
-        <item>нарушение липидного обмена</item><item>рак поджелудочной железы</item><item>рак груди</item><item>малярия</item><item>холера</item><item>гипертония</item><item>пониженное давление</item>
-        <item>лучевая болезнь</item><item>бешенство</item><item>брюшной тиф</item><item>ветрянка</item><item>гепатит А</item><item>коронавирус</item><item>грипп</item><item>дифтерия</item><item>крапивница</item><item>ОРВИ</item>
-        <item>лишай</item><item>сифилис</item><item>столбняк</item><item>чесотка</item><item>чума</item><item>лихорадка</item><item>изжога</item><item>рак желудка</item><item>аритмия</item><item>склероз</item><item>сердечная недостаточность</item>
-        <item>радикулит</item><item>сколиоз</item><item>кифоз</item><item>рвота, тошнота</item><item>опухоль мозга</item><item>паралич</item><item>расстройства психики</item>
-        <item>эпилепсия</item><item>гнойное воспаление ануса</item><item>геморрой</item><item>рак прямой кишки</item><item>анальная трещина</item><item>понос</item><item>гиперактивность</item><item>педофилия</item><item>насморк</item>
-        <item>перелом двух ребёр</item><item>отсутствие зубов</item><item>эбола</item><item>оспа</item>
+        <item>HIV</item><item>avitaminosis</item><item> alcoholism</item> <item> animal allergy </item> <item> anorexia </item> <item> asthma </item> <item> insomnia </item>
+        <item> bipolar disorder </item> <item> Alzheimers disease </item> <item> chickenpox </item> <item> sinusitis </item> <item> gastritis </item> <item> hemophilia </item> <item> hepatitis B </item> <item> glaucoma </item> <item> deaf-mute </item>
+        <item>daltonism</item><item> depression</item><item> diarrhea</item><item> stuttering</item><item> caries</item> <item> strabismus </item> <item > herniated disc </item> <item> migraine </item> <item> urolithiasis </item> <item> drug addiction </item>
+        <item> urinary incontinence </item> <item> obesity </item> <item> osteochondrosis </item> <item> missing leg </item> <item> missing arm </item> <item> paranoia </item > <item> flat feet </item> <item> pneumonia </item> <item> cold </item>
+        <item> psoriasis</item> <item> avian influenza </item> <item> blood cancer </item> <item> lung cancer </item> <item> type 2 diabetes mellitus </item> <item> sugar type 1 diabetes </item> <item> Tourettes syndrome </item>
+        <item> blindness</item><item> tuberculosis</item> <item> mental retardation </item> <item> scurvy </item> <item> schizophrenia </item> <item> epilepsy </item> <item> stomach ulcer </item> <item> heart disease </item> <item> dust allergy </item>
+        <item> lipid metabolism disorder </item> <item> pancreatic cancer </item> <item> breast cancer </item> <item> malaria </item> <item> cholera </item> <item> hypertension </item> <item> low blood pressure </item>
+        <item> radiation sickness </item> <item> rabies </item> <item> typhoid fever </item> <item> chickenpox </item> <item> hepatitis A </item> <item> coronavirus </item > <item> influenza </item> <item> diphtheria </item> <item> urticaria </item> <item> SARS </item>
+        <item>lice</item><item> syphilis</item><item> tetanus</item><item> scabies</item><item> plague</item> <item> fever </item> <item > heartburn </item> <item> stomach cancer </item> <item> arrhythmia </item> <item> sclerosis </item> <item> heart failure </item>
+        <item>radiculitis</item><item> scoliosis</item><item> cyphosis</item> <item> vomiting, nausea </item> <item> brain tumor </item> <item> paralysis </item > <item> mental disorders </item>
+        <item> epilepsy</item> <item> purulent inflammation of the anus </item> <item> hemorrhoids </item> <item> rectal cancer </item> <item> anal fissure </item> <item> diarrhea </item> <item> hyperactivity </item> <item> pedophilia </item> <item> runny nose </item>
+        <item> fracture of two ribs </item> <item> missing teeth </item> <item> ebola </item> <item> smallpox </item>
     </array>
 
     <array name="fear">
-        <item>арахнофобия</item><item>нет фобий</item><item>клаустрофобия</item><item> боязнь темноты</item><item> боязнь высоты</item><item>боязнь страха</item><item>боязнь крови</item><item>фобия страха</item><item>боязнь утонуть</item><item>агорафобия</item><item>айхмофобия (боязнь острые предметы)</item><item>боязнь громких звуков</item><item>нет фобий</item><item>боязнь противоположного пола</item><item>охлофобия (боязнь массового скопления)</item><item>децидофобия (боязнь принятие решений)</item><item>боязнь собак</item><item>боязнь компуктера</item><item>педофобия (боязнь детей)</item><item>петтофобия (боязнь пукнуть в присутсвие людей)</item><item>ректофобия (боязнь некаканья)</item><item>сомнифобия (боязнь спать)</item><item>боязнь грызунов</item><item>боязнь призраков</item><item>боязнь скелетов</item><item>аблутофобия (состояние, при котором люди боятся плавать)</item><item>боязнь тараканов</item><item>вагинофобия (боязнь женских гениталий)</item><item>боязнь тумана</item><item>гомофобия</item><item>боязнь врачей</item><item>криофобия (страх холода)</item><item>макрофобия (боязнь долгого ожидания)</item><item>уринофобия (боязнь мочеиспускания)</item><item>юдофобия (боязнь всего еврейского)</item><item>боязнь собак</item>
-    </array>
+        <item> arachnophobia</item> <item> no phobias </item> <item> claustrophobia </item> <item> fear of the dark </item> <item> fear of heights </item> <item> fear of fear </item> <item> fear of blood </item> <item> phobia of fear </item> <item> fear of drowning </item> <item> agoraphobia </item> <item> aichmophobia (fear of sharp objects) </item> <item> fear of loud sounds </item> <item> no phobias </item> <item> fear of the opposite sex </item> <item> chlophobia (fear of crowding) </item> <item> decidophobia (fear of decision making ) </item> <item> fear of dogs </item> <item> fear of a computer </item> <item> pedophobia (fear of children) </item> <item> pettophobia (fear of farting in the presence of people) </item> <item> rectophobia (fear of non-pooping) </item> <item> somniphobia (fear of sleeping) </item> <item> fear of rodents </item> <item> fear of ghosts </item> <item> fear of skeletons </item > <item> ablutophobia (a condition in which people are afraid to swim) </item> <item> fear of cockroaches </item> <item> vaginophobia (fear of female genitalia) </item> <item> fear of fog </item> <item> homo phobia </item> <item> fear of doctors </item> <item> cryophobia (fear of cold) </item> <item> macrophobia (fear of long waiting) </item> <item> urinophobia (fear of urination) </item > <item> Judophobia (fear of everything Jewish) </item> <item> fear of dogs </item>    </array>
     <array name="hobby">
-        <item>Рисование</item><item>Писательство</item><item>Программирование</item><item>Вышивание</item><item>Увлекается скрапбукингом</item><item>Танцы</item><item>Интересуется светскими новостями</item><item>Астрология</item><item>Картография</item><item>Биология</item><item>Физика</item><item>Математика</item><item>Делать украшения из бисера</item><item>Делать мозайки</item><item>Бег</item><item>Азартные игры</item><item>Шутки шутить</item><item>Изготовлять куклы</item><item>Плетение корзин из любых веток</item><item>Животноводство</item><item>Выращивание растений</item><item>Занимается ювелирством</item><item>Коллекционирует монеты</item><item>Коллекционирует сушеных насекомых</item><item>Готовка</item><item>Альпинизм</item><item>Тенис</item><item>Баскетбол</item><item>Волейбол</item><item>Верховая езда</item><item>Стрельба из лука</item><item>Стрелять из оружия</item><item>Увлекается иностранными языками</item><item>Разработка сайтов</item><item>Выращивание кристаллов</item><item>Лепит горшки и посуду из глины</item><item>Разводить животных</item><item>Разыгрывать всех подряд</item><item>Плаванье</item><item>Спорт</item><item>Мастурбация</item><item>Автомобили</item><item> Ароматерапия</item><item>Астрономия</item><item>Аэробика</item><item>Аэрография</item><item>Бадминтон</item><item>Батик</item><item>Батут</item><item> Бильярд</item><item>Блоггерство</item><item>Бодиарт</item><item>Боевые искусства</item><item>Бонсай</item><item>Боулинг</item><item>Велосипед</item><item>Видеомонтаж</item><item>Выращивание кристаллов</item><item>Выращивание растений и цветов</item><item>Вязание</item><item>Гербарий</item><item>Головоломки</item><item>Гольф</item><item>Горные лыжи</item><item>Граффити</item><item>Дайвинг</item><item>Дартс</item><item>Декупаж</item><item>Дерево (выжигание и резьба)</item><item>Диггерство</item><item>Дизайн интерьера</item><item>Дизайн одежды</item><item>Животные (разведение и уход)</item><item>Жонглирование</item><item>Зентангл</item><item>Игра на музыкальных инструментах</item><item>Игрушки и куклы</item><item>Игры на компьютерах и приставках</item><item>Изделия из металла и кузнечное дело</item><item>Изучение новых компьютерных программ</item><item>Икебана</item><item>Иностранные языки</item><item>Йога</item><item>Исторические реконструкции</item><item>Кайтинг</item><item>Каллиграфия</item><item>Карвинг</item><item>Картинг и квадроциклы</item><item>Квест-комнаты</item><item>Кладоискательство и археология</item><item>Клубный отдых</item><item>Коллекционирование</item><item>Компьютерная графика</item><item>Концерты (посещение)</item><item>Коньки и ролики</item><item>Косплей</item><item>Кроссворды (составление и разгадывание)</item><item>Кулинария</item><item>Лазертаг</item><item>Лепка</item><item>Лошади (верховая езда/уход)</item><item>Лыжи</item><item>Массаж</item><item>Моделирование</item><item>Музеи и выставки</item><item>Музыка(написание ремиксов)</item><item>Мыловарение</item><item>Настольные игры</item><item>Оригами</item><item>Открытки (изготовление своими руками/обмен (посткроссинг))</item><item>Охота</item><item>Пазлы</item><item>Парашютный спорт</item><item>Паркур</item><item>Пейнтбол</item><item>Пение и караоке</item><item>Переписка по обычной почте</item><item>Пикап</item><item>Пилатес</item><item>Писательская деятельность и журналистика</item><item>Плавание</item><item>Плетение</item><item>Получение научных званий и степеней</item><item>Предпринимательство</item><item>Программирование</item><item>Психология и тренинги</item><item>Путешествия</item><item>Пчеловодство</item><item>Радиовещание</item><item>Разработка сайтов</item><item>Рисование</item><item>Робототехника</item><item>Рукоделия из кожи (одежда аксессуары)</item><item>Рыбалка</item><item>Самодельные вещи: одежда обувь аксессуары</item><item>Серфинг</item><item>Силовые тренировки</item><item>Скейтборд</item><item>Скрапбукинг (фотоальбомы своими руками)</item><item>Сноуборд</item><item>Собирание грибов и ягод</item><item>Спорт-фанат</item><item>Стекло (изготовление украшений и предметов интерьера)</item><item>Страйкбол</item><item>Стрельба</item><item>Танцы и балет</item><item>Татуировки и пирсинг</item><item>Театр (театральный кружок)</item><item>Теннис</item><item>Файер-шоу</item><item>Фейерверки</item><item>Фокусы</item><item>Фотография и фотокниги</item><item>Футбол</item><item>Шитье и вышивание</item><item>Чтение книг</item><item>Наблюдение за птицами</item><item>Гадание на картах</item><item>Ребусы</item><item>Мода</item><item>Флористика</item><item>Каратэ</item><item>Теквандо</item><item>Дзюдо</item><item>Бодибилдинг</item><item>Фотография</item><item>Скалолазание</item><item>Парусный спорт</item><item>Викторины</item><item>Сыроварение</item><item>Домохозяйство</item><item>Космология</item><item>Косметология</item><item>Сбор грибов</item><item>Садоводство</item><item>Музыка</item><item>Кунг-Фу</item><item>Занимается изучением медицины</item><item>Изучение почвоведения</item><item>Изучение психологии</item><item>Обработка металла</item><item>Битбокс</item>
+        <item>Drawing</item><item>Writing</item><item>Programming</item><item> Embroidery</item> <item> Is interested in scrapbooking </item>
+        <item> Dancing </item> <item> Interested in secular news </item> <item> Astrology </item> <item> Cartography </item>
+        <item> Biology </item> <item> Physics </item> <item> Mathematics </item> <item> Make Beaded Jewelry </item> <item> Make Mosaic </item>
+        <item> Run </item> <item> Gambling </item> <item> Joke Jokes </item> <item> Make Dolls </item> <item> Weaving baskets from any branches </item>
+        <item> Livestock </item> <item> Growing plants </item> <item> Engaged in jewelry </item> <item> Collects coins </item>
+        <item> Collects dried insects </item> <item> Cooking </item> <item> Mountaineering </item> <item> Tenis </item> <item> Basketball </item>
+        <item> Volleyball </item > <item> Horse Riding </item> <item> Archery </item> <item> Gun Shoot </item> <item> He is interested in foreign languages ​​</item>
+        <item> Website Development </item> <item> Growing Crystals </item> <item> Sculpts clay pots and utensils </item> <item> Breeding animals </item> <item> Prank everyone </item>
+        <item> Swimming </item> <item> Sports </item> <item> Masturbation </item> <item> Cars </item> <item> Aromatherapy </item>
+        <item> Astronomy </item> <item> Aerobics </item> <item> Airbrushing </item> <item> Badminton </item> <item>Batik</item><item>Trampoline</item>
+        <item> Billiards </item> <item> Blogging </item> <item> Bodypainting </item> <item> Martial Arts </item> <item> Bonsai </item>
+        <item> Bowling </item> <item> Bicycle </item> <item> Video Editing </item> <item> Growing Crystals </item> <item> Growing Plants and Flowers </item >
+        <item> Knitting </item> <item> Herbarium </item> <item> Puzzle </item> <item> Golf </item> <item> Skiing </item> <item> Graffiti </item>
+        <item> Diving</item><item> Darts</item><item> Decoupage</item> <item> Wood (burning and carving) </item> <item> Digestion </item>
+        <item> Interior Design </item> <item> Fashion design </item> <item> Animals (breeding and grooming) </item> <item> Juggling </item>
+        <item> Zentangle </item> <item> Playing the muses Tools </item> <item> Toys and dolls </item> <item> Games on computers and consoles </item>
+        <item> Metal products and blacksmithing </item> <item> Learning new computer programs </item> <item> Ikebana </item>
+        <item> Foreign languages ​​</item> <item> Yoga </item> <item> Historical reconstructions </item> <item> Kiting </item>
+        <item> Calligraphy </item> <item> Carving </item> <item> Karting and ATVs </item> <item> Quest Rooms </item>
+        <item> Treasure Hunting and Archeology </item> <item> Club Holidays </item> <item> Collecting </item> <item> Computer graphics </item>
+        <item> Concerts (visit) </item> <item> Skates and rollers </item> <item> Cosplay </item> <item> Crosswords ( composing and solving) </item>
+        <item> Cooking </item> <item> Laser tag </item> <item> Modeling </item> <item> Horses (riding / grooming) </item> <item> Skiing </item>
+        <item>Massage</item><item> Modeling</item> <item> Museums and Exhibitions </item> <item> Music (writing remixes) </item>
+        <item> Soap making </item> <item> Board Games </item> <item> Origami </item> <item> Postcards (DIY / exchange (postcrossing)) </item>
+        <item> Hunting </item> <item> Puzzles </item> <item> Parachuting </item> <item> Parkour </item> <item> Paintball</item>
+        <item> Singing and Karaoke </item> <item> Mailing </item> <item> Pickup </item> <item> Pilates </item> <item> Writing and Journalism </item>
+        <item> Swimming </item> <item> Weaving </item> <item> Earning Academic Titles and Degrees </item> <item> Entrepreneurship </item>
+        <item> Programming </item> <item> Psychology and Training </item> <item> Travel </item> <item> Beekeeping </item> <item> Broadcasting </item>
+        <item> Website Development </item> <item> Drawing </item > <item> Robotics </item> <item> Leather handicrafts (clothing accessories) </item>
+        <item> Fishing </item> <item> Homemade things: clothing shoes accessories </item> <item> Surfing </item> <item> Strength training </item>
+        <item> Skateboard </item> <item> Scrapbooking (DIY photo albums) </item> <item> Snowboard </item> <item> Picking mushrooms and berries </item>
+        <item> Sports fan </item> <item> Glass (jewelry and interior design) </item> <item> Airsoft </item> <item> Shooting </item> <item> Dance and ballet </item>
+        <item> Tattoos and piercings </item> <item> Theater (theater group) </item> <item> Tennis </item> <item> Fire show </item>
+        <item> Fireworks </item> <item> Magic tricks </item> <item> Photography and photo books </item> <item> Football </item>
+        <item> Sewing and embroidery </item> <item> Reading books </item> <item> Birdwatching </item> <item> Fortune telling </item> <item> Puzzles </item> <item> Fashion </item> <item> Floristry </item>
+        <item> Karate </item> <item> Tekwando </item> <item> Judo </item > <item> Bodybuilding </item> <item> Photography </item>
+        <item> Rock Climbing </item> <item> Sailing </item> <item> Quizzes </item> <item> Cheese Making </item> <item>Household</item>
+        <item>Cosmology</item><item>Cosmetology</item> <item> Mushroom picking </item> <item> Gardening </item> <item> Music </item>
+        <item>Kung Fu </item> <item> Studying Medicine </item> <item> Studying Soil Science </item> <item> Studying Psychology </item>
+        <item> Metal Processing </item> <item> Beatbox </item>
     </array>
     <array name="character">
-        <item>властность</item><item>внимательность</item><item>внушаемость</item><item>ворчливость</item><item>гостеприимность</item><item>грубость</item><item>деликатность</item><item>добродушие</item><item>доброта</item><item>доверчивость</item><item>жадность</item><item>жестокость</item><item>жизнерадостность</item><item>истеричность</item><item>конфликтность</item><item>лицемерие</item><item>любезность</item><item>надёжность</item><item>невозмутимость</item><item>нежность</item><item>ненадёжность</item><item>неравнодушие</item><item>неусидчивость</item><item>обидчивость</item><item>осторожность</item><item>пофигизм</item><item>предприимчивость</item><item>равнодушие</item><item>расчётливость</item><item>самовлюбленность</item><item>самостоятельность</item><item>сдержанность</item><item>скандальность</item><item>слабохарактерность</item><item>собранность</item><item>терпеливость</item><item>тревожность</item><item>трусость</item><item>усидчивость</item><item>флегматичность</item><item>харизматичность</item><item>храбрость</item><item>эгоизм</item><item>щедрость</item><item>лояльность</item><item>послушный</item><item>справедливый</item><item>убедительность</item><item>решительность</item><item>целеустремлённость</item><item>мудрость</item><item>организованность</item><item>самоконтроль</item><item>выносливость</item><item>внимательность</item><item>энтузиаст</item><item>инициативность</item><item>пунктуальность</item><item>ответственность</item><item>лидерство</item><item>дисциплинированность</item><item>общительность</item><item>воспитанность</item><item>гордость</item><item>самокритичность</item><item>настойчивость</item><item>легковозбудимость</item><item>неустойчивость</item><item>заботливость</item>
+        <item> authority</item><item> attentiveness</item><item> suggestibility</item><item> perplexity</item><item> hospitality</item>
+        <item> rudeness </item> <item > delicacy </item> <item> kindness </item> <item> kindness </item> <item> gullibility </item>
+        <item> greed </item> <item> cruelty </item> <item> cheerfulness </item><item> hysteria</item><item>conflictness</item>
+        <item> hypocrisy</item><item> courtesy</item><item>reliability</item> <item> equanimity </item> <item> tenderness </item>
+        <item> insecurity </item> <item> indifference </item> <item> restlessness </item> <item> sensitivity </item> <item> caution </item>
+        <item>pofigism</item><item> entrepreneurship</item><item> indifference</item><item> prudence</item><item> egotism</item>
+        <item> independence </item> <item > restraint </item> <item> scandalousness </item> <item> weak character </item> <item> composure </item>
+        <item> patience </item> <item> anxiety </item> <item> cowardice </item><item> perseverance</item><item> phlegm</item> <item> hari nature </item>
+        <item> courage </item> <item> selfishness </item> <item> generosity </item> <item> loyalty </item> <item> obedient </item> <item>fair </item>
+        <item> persuasiveness </item> <item> decisiveness </item> <item> purposefulness </item> <item> wisdom </item> <item> organization </item>
+        <item> self-control </item > <item> endurance </item> <item> attentiveness </item> <item> enthusiast </item> <item> initiative </item>
+        <item> punctuality </item> <item> responsibility </item> <item> leadership </item> <item> discipline </item> <item> sociability </item>
+        <item> good manners </item> <item> pride </item> <item> self-criticism </item> <item> perseverance </item> <item> excitable </item>
+        <item> instability </item> <item> caring </item>
     </array>
     <array name="extra_info">
-        <item>ведёт личный дневник.</item><item>верит в сверхъестественных существ.</item><item>выиграл(а) в лотерее целое состояние</item><item>знает наизусть все стихи Пушкина</item><item>играл(а) в театре.</item><item>имеет экстрасенсорные способности.</item><item>может оказать первую помощь.</item><item>ненавидит современную музыку.</item><item>обладает феноменальной памятью.</item><item>пережил(а) три покушения.</item><item>побывал(а) на вершине Эвереста.</item><item>поставил(а) мировой рекорд по поеданию бургеров.</item><item>проектировал(а) этот бункер.</item><item>проходил(а) курсы кулинарии.</item><item>проходил(а) курсы парикмахера.</item><item>сидел(а) в тюрьме.</item><item>страдает морской болезнью.</item><item>уверен(а), что эта катастрофа - заговор рептилий.</item><item>увлекается охотой.</item><item>умеет жонглировать.</item><item>хорошо знает высшую математику.</item><item>хорошо ладит с животными.</item><item>читал(а) книгу про выживание на необитаемом острове.</item><item>является копрофилом.</item><item>является резидентом Comedy Club</item><item>играет на гитаре</item><item>получал(а) удар молнии</item><item>смотрел(а) все серии с Беаром Гриллсом</item><item>лоуреат нобелевской премии</item><item>занимался(ась) фехтованием</item><item>умеет открывать консервы</item><item>знает, где находится продовольствие в парке аттракционов</item><item>хорошо ориентируется на местности</item><item>еврей</item>
-    </array>
+        <item> keeps a personal diary. </item> <item> believes in supernatural beings. </item> <item> won a fortune in the lottery </item>
+        <item> knows all Pushkins poems by heart </item> <item> played in the theater. </item> <item> has psychic abilities. </item>
+        <item> can provide first aid. </item> <item> hates modern music. </item> <item > has a phenomenal memory. </item>
+        <item> survived three assassination attempts. </item> <item> climbed Mount Everest. </item> <item> set a world record for eating burger </item>
+        <item> designed this bunker. </item> <item> took a cooking course. </item> <item> took a hairdresser course. </item>
+        <item> was in prison. </item> <item> suffers from seasickness. </item> <item> I am confident that this disaster is a conspiracy of reptiles. </item>
+        <item> is fond of hunting. </item> <item> can juggle. </item> <item> knows higher mathematics. </item>
+        <item> gets along well with animals. </item> <item> read a book about survival on a desert island. </item> <item> explicit he is a coprophile. </item>
+        <item> is a resident of Comedy Club </item> <item> plays the guitar </item> <item> received a lightning strike </item> <item> watched all episodes with Bear Grylls </item>
+        <item> Nobel Prize winner </item> <item> fenced </item> <item> knows how to open canned food </item> <item> knows where the food is in the amusement park </item>
+        <item> well-versed in the area </item> <item>  Jew </item></array>
+
     <array name="bag">
-        <item>беспроводная колонка.</item><item>будильник.</item><item>гаечный ключ.</item><item>гитара.</item><item>губная гармошка.</item><item>десять одноразовых медицинских масок.</item><item>дублёнка.</item><item>карманные часы.</item><item>кассеты с фильмами.</item><item>компас.</item><item>коробка с боеприпасами.</item><item>косметическое зеркало.</item><item>лейка.</item><item>молоток и гвозди.</item><item>набор для шитья.</item><item>набор кухонных инструментов.</item><item>немецкая овчарка.</item><item>несколько чистых листов пергамента.</item><item>открывашка.</item><item>персидский кот.</item><item>презервативы.</item><item>пустая коробка.</item><item>рулоны туалетной бумаги.</item><item>семена картофеля.</item><item>семена пшеницы.</item><item>стерильные одноразовые шприцы.</item><item>телевизор.</item><item>три респираторные маски.</item><item>фонарик и запасные батарейки.</item><item>четыре рации</item><item>патроны</item><item>пистолет</item><item>игрушечный медведь</item><item>комплект одежды на двух персон</item><item>железная труба</item><item>арматура</item><item>ножницы</item><item>лезвие для бритья</item><item>ноутбук</item><item>рюкзак</item><item>канцелярские принадлежности</item><item>красный диплом</item><item>спички</item><item>семена риса</item><item>годовой запас макарон</item><item>кофе</item><item>чай</item><item>сода</item><item>чугунная посуда</item><item>консервы</item><item>скальпель</item><item>нож</item><item>бинты</item><item>вазелин</item><item>пинцет</item><item>помада</item><item>солнцезащитные очки</item><item>камера безопасности</item><item>спальные мешки</item><item>батарейки</item><item>свечи</item><item>огнетушитель</item><item>топор</item><item>лопата</item><item>экстремальный набор для выживания</item><item>велосипед</item><item>огниво</item><item>леденцы</item><item>шоколад</item><item>настольные игры</item><item>книги</item><item>мыло</item><item>сигареты</item><item>бутылка водки</item><item>жевательная резинка</item><item>фильтр для воды</item><item>книга с арбукой МОРЗЕ</item><item>книга с языком жестов</item><item>капканы</item><item>паспорт</item><item>теннисные ракетки</item><item>шарики</item><item>мусорные пакеты</item><item>набор посуды</item><item>кассовый аппарат</item><item>микросхемы</item><item>строительный набор</item><item>палатка</item><item>двигатель</item><item>верёвки</item><item>арбалет</item><item>стрелы</item><item>часы</item><item>гамак</item><item>фотографии земли с космоса</item><item>использованный шприц</item><item>игла и нитки</item><item>кассета Макса Коржа</item><item>перья</item><item>кольцо с бриллиантом</item><item>школьный альбом</item><item>жидкость для розжига костра</item><item>телефон</item><item>керамическая ваза</item><item>бутылки для воды</item>
+        <item> wireless speaker. </item> <item> alarm clock. </item> <item> wrench. </item> <item> guitar. </item> <item> harmonica. </item>
+        <item> ten disposable medical masks. </item> <item> sheepskin coat. </item> <item> pocket watch. </item> <item> film cassettes. </item>
+        <item> compass .</item> <item> ammo box. </item> <item> cosmetic mirror. </item> <item> watering can. </item> <item> hammer and nails. </item>
+        <item> sewing kit. </item> <item> kitchen tools kit. </item> <item> German Shepherd. </item> <item> a few blank sheets of parchment. </item>
+        <item> opener .</item> <item> persian cat. </item> <item> condoms. </item> <item> empty box. </item>
+        <item> rolls of toilet paper. </item> <item> potato seeds. </item> <item> wheat seeds. </item> <item> sterile disposable syringes. </item>
+        <item> TV.</item> <item> three respirators. </item> <item> flashlight and spare batteries. </item> <item> four radios </item>
+        <item> ammo</item><item> pistol</item> <item> toy bear </item> <item> set of clothes for two persons </item> <item> iron pipe </item>
+        <item> accessories</item><item> scissors</item> <item> shaving blade </item> <item> laptop </item> <item> backpack </item>
+        <item> stationery </item> <item> honors </item> <item> matches </item> <item> rice seeds </item> <item> one year supply of pasta </item>
+        <item>coffee</item><item> tea</item><item> soda</item> <item> cast iron dishes </item> <item> canned food </item> <item> scalpel </item> <item> knife </item>
+        <item> bandages</item><item> vaseline</item><item> tweezers</item><item> lipstick</item> <item> sunglasses </item> <item> security camera </item>
+        <item> sleeping bags </item> <item> batteries </item> <item> candles </item> <item> fire extinguisher </item> <item> ax </item> <item> shovel </item>
+        <item> extreme survival kit </item> <item> bike </item> <item> flint </item> <item> lollipops </item> <item> chocolate </item>
+        <item> board games </item> <item> books </item> <item> soap </item> <item> cigarettes </item> <item> bottle of vodka </item> <item> chewing gum </item >
+        <item> water filter </item> <item> book with arbu MORSE </item> <item> book with sign language </item> <item> traps </item> <item> passport </item>
+        <item> tennis rackets </item> <item> balls </item> <item> garbage bags </item> <item> tableware </item> <item> cash register </item>
+        <item> chips</item> <item> building kit </item> <item> tent </item> <item> engine </item> <item> ropes </item> <item> crossbow </item>
+        <item> shots</item><item> hours</item><item> hammock</item> <item> photos of the earth from space </item> <item> used syringe </item>
+        <item> needle and thread </item> <item> Max Korzh cassette </item> <item> feathers </item> <item> diamond ring </item> <item> school album </item>
+        <item> campfire lighter </item> <item> telephone </item> <item> ceramic vase </item> <item> water bottles </item>
     </array>
     <array name="body">
-        <item>Худой</item><item>Полный</item><item>Атлетическое</item><item>Ожирение слабое</item><item>Ожирение сильное</item><item>Крепкий</item>
+        <item> Slim</item> <item> Full </item>
+        <item> Athletic </item>
+        <item> Obesity low </item>
+        <item> Severe obesity </item>
+        <item> Strong </item>
     </array>
     <array name="actions">
-        <item>Сгенерировать новую катастрофу.</item><item>Раскрыть любую характеристику любого игрока.</item><item>Враг (который находится после вас (Вы не сможете попасть в бункер если ваш враг пройдет в бункер)).</item><item>Друг (который находится после вас (Вы сможете пройти в бункер только если ваш друг пройдет в бункер)).</item><item>Украсть хобби у другого игрока.</item><item>Перегенирируйте любую вашу характеристику.</item><item>Перегенирируйте профессии всех игроков.</item><item>Поменяйтесь с игроком багажами.</item><item>Перегенирируйте свое состояние здоровья.</item><item>Ваш бункер находится под парком аттракционов.</item><item>+1 слот в бункере.</item><item>Сгенирировать себе новую профессию.</item><item>В вашем багаже появляется еще один предмет.</item><item>Ваш бункер находится около бункера который настроен негативно.</item><item>Изменить свой багаж на новый.</item><item>Вылечить любого игрока от любых недугов.</item><item>Данная карта дает возможность вылечить тебя от любого недуга.</item><item>Данная карта дает возможность вылечить твою фобию.</item><item>Данная карта дает тебе возможность поменяться картой "фобия"</item><item>Все игроки меняются картами "профессия" по часовой стрелке.</item><item>Рядом с вами второй бункер и он настроен недоброжелательно.</item><item>В 20 метрах от вашего бункера сохранился погреб с вином.</item><item>Данная карта дает вам возможность поменяться любой характеристикой с любым игроком.</item><item>Данная карта дает вам возможность поменяться любой характеристикой после вас.</item><item>Данная карта дает вам возможность поменять ориентацию любого игрока на противоположную.</item><item>Аннулирование всех профессий.</item>
+        <item> Generate a new disaster. </item> <item> Reveal any stat of any player. </item>
+        <item> Enemy (which is behind you (you cannot enter the bunker if your enemy enters the bunker)). </item>
+        <item> A friend (who is behind you (you can only go to the bunker if your friend goes into the bunker)). </item>
+        <item> Steal another players hobby. </item> <item> Override any of your stats. </item>
+        <item> Re-generate the professions of all players. </item> <item> Trade luggage with the player. </item>
+        <item> Re-regenerate your health. </item> <item> Your bunker is under an amusement park. </item>
+        <item> + 1 slot in the bunker. </item> <item> Generate a new profession. </item> <item> Another item appears in your luggage. </item>
+        <item> Your bunker is near a negative bunker. </item> <item> Change your luggage to a new one. </item>
+        <item> Cure any player from any ailment. </item> <item> This card allows you to cure you from any ailment. </item>
+        <item> This card allows you to cure your phobia. </item> <item> This card gives you the opportunity to exchange your phobia card </item>
+        <item> All players switch profession cards in a clockwise direction. </item> <item> There is a second bunker next to you, and it is not friendly. </item>
+        <item> There is a wine cellar 20 meters from your bunker. </item> <item> This map gives you the opportunity to exchange any characteristics with any player. </item>
+        <item> This card gives you the ability to change any stat after you. </item>
+        <item> This card gives you the ability to reverse the orientation of any player. </item>
+        <item> Cancellation of all professions. </item>
     </array>
+
     <array name="bonus_items">
-        <item>Инструменты</item><item>Газ-53</item><item>Трактор</item><item>Салон красоты</item><item>Мастерская</item><item>Библиотека</item><item>Столовая</item><item>Система автоматизации бункера в нерабочем состоянии</item><item>Наличие поломок и неисправностей</item><item>Некачественная проводка</item><item>Теплицы и зерновые культуры</item><item>Вентиляционные шахты</item><item>Неглубокая шахта</item><item>Кабинет</item><item>Место для постройки небольшого здания</item><item>Пустой склад</item><item>Склад с провизией</item><item>Место для готовки еды</item><item>Тир</item><item>Спортивный зал</item><item>Генератор энергии</item><item>Семена агрокультур</item><item>Книги по выживанию</item><item>Склад с едой</item><item>Компьютер</item><item>Радио-станция</item><item>Оружейный склад</item><item>Паяльная станция</item><item>Стрельбище</item><item>Метео-станция</item><item>Карта местности</item><item>Книги по робототехнике</item><item>Лаборатория по исследованию</item><item>Пособие по ремонту электрооборудования</item>
+        <item>Tools</item><item>Gas-53</item><item> Tractor</item> <item> Beauty Salon </item> <item> Workshop </item> <item> Library </item >
+        <item> Dining room</item> <item> Bunker automation system out of service </item> <item> Presence of breakdowns and malfunctions </item>
+        <item> Poor wiring </item> <item> Greenhouses and crops </item> <item> Ventilation shafts </item> <item> Shallow mine </item>
+        <item> Office</item> <item> Place to build a small building </item> <item> Empty warehouse </item> <item> Warehouse with provisions </item>
+        <item> Food preparation area </item> <item> Shooting range </item> <item> Gym </item> <item> Energy generator </item> <item> Agricultural seeds </item>
+        <item> Survival Books </item> <item> Food Warehouse </item> <item> Computer </item> <item> Radio Station </item> <item> Armory </item>
+        <item> Soldering Station </item> <item> Shooting Range </item> <item> Weather Station </item> <item> Area Map </item> <item> Robotics Books </item>
+        <item> Research Laboratory </item> <item> Electrical Repair Manual </item>
     </array>
     <array name="gender">
-        <item>мужской</item><item>женский</item>
+        <item>male</item><item>female</item>
     </array>
-    <array name="catast_titles">
-        <item>Супервулкан</item><item>Экологическая катастрофа и глобальный голод</item><item>Метеорит</item><item>Проект «Стрела»</item>
-        <item>Суперкомпьютер</item><item>Химическая война</item><item>Инопланетная раса \nрешила захватить Землю</item>
-        <item>Ядерная война</item><item>Биотерроризм</item><item>Зомби-апокалипсис</item><item>Глобальный потоп</item><item>Симианский грипп</item>
+    <array name = "catast_titles">
+        <item>Supervolcano</item> <item> Environmental disaster and global famine </item> <item> Meteorite </item> <item> Arrow Project </item>
+        <item>Supercomputer</item> <item> Chemical Warfare </item> <item> The alien race \n decided to take over the Earth </item>
+        <item> Nuclear War </item> <item> Bioterrorism </item> <item> Zombie Apocalypse </item> <item> Global Flood </item> <item> Simian Flu </item>
     </array>
-    <array name="catast_descriptions">
-        <item>Взрыв Йеллоустонского супервулкана пошатнул Землю. Выброшенный в атмосферу пепел закрыл Солнце на несколько месяцев. На планете началась \"ядерная зима\", средняя температура опустилась на 11 градусов, погибли пять из каждых шести населявших Землю существ. Климат существенно изменился. На планете теперь царит глобальная засуха \nОстаток выжившего населения: 7% \nРазрушения на поверхности: 9%.</item>
-        <item>Интенсивное ведение сельского хозяйства и деградация почв вкупе с засухой привели к пыльным бурям, которые массово уничтожают посевы и приводят к неурожаю и значительному уменьшению запасов пищи. Концентрация кислорода в атмосфере падает и климат значительно ухудшается \nОстаток выжившего населения: 17% \nРазрушения на поверхности: 4%.</item>
-        <item>На планету падает космический объект огромных размеров, создавая мощную ударную волну которая сносит все на своем пути. На месте падения образовывается масштабный кратер. Повсюду проходят сильные землетрясения и цунами. Пожары охватывают всю Землю, а из-за количества пыли, которое поднялось в атмосферу, на планете настает долгая \"ядерная зима\" \nОстаток выжившего населения: 30% \nРазрушения на поверхности: 22%.</item>
-        <item>Военные работавшие над проектом нечаянно открыли вход в иное измерение. Густой неестественный белый туман медленно начал заполонять огромные участки поверхности. Видимость практически нулевая. По миру стали бродить неведомые чудовища, которые могут уничтожить все человечество. Разрушения глобальные. \nОстаток выжившего населения: 1% \nРазрушения на поверхности: 26%.</item>
-        <item>Искусственный интеллект, который задумывался для управления системами обороны, вышел из строя и посчитал человечество большой опасностью. Это привело к тому, что искусственный интеллект отключил инструкцию \"не убивать человека\" и взял под контроль процедуры управления военными роботами, которые начали истреблять человечество. Суперкомпьютер захватил власть над планетой, выжившим людям пришлось прятаться в старых бункерах \nОстаток выжившего населения: 4% \nРазрушения на поверхности: 32%.</item>
-        <item>В результате применения химического и бактериологического оружия был нарушен микробиологический состав почв, значительно изменился экологический баланс, растения, почва и вода были отравлены. На Земле остался малый процент населяющих её живых существ \nОстаток выжившего населения: 1% \nРазрушения на поверхности: 10%.</item>
-        <item>Межпланетные аппараты падают на поверхность планеты один за другим. Оружие военных оказывается бессильным против них и постепенно пришельцы истребляют большую часть населения. После выхода из бункера подавляющее большинство инопланетян погибло из-за неприспособленности к микроорганизмам, населяющим Землю \nОстаток выжившего населения: 1% \nРазрушения на поверхности: 18%</item>
-        <item>Несколько противоборствующих сторон одновременно запустили друг на друга залп ядерных боеголовок. После взрывов погибло большое количество людей и разразились огромные пожары. Всю планету окутала ядерная пыль, закрывшая солнечный свет и приведшая к долгой ядерной зиме. Наблюдаются проблемы с почвой, водой и растительностью на поверхности, нужна химическая обработка \nОстаток выжившего населения: 28% \nРазрушения на поверхности: 44%.</item>
-        <item>Создавая более заразный и смертоносный штамм вируса в стенах исследовательской лабораторий один из работников случайно им заразился, в результате чего вирус вышел из-под контроля и очень быстро распространился по всей планете. Большой процент всех живых существ погиб. У остальных существ и растений развились мутации \nОстаток выжившего населения: 29% \nРазрушения на поверхности: 10%.</item>
-        <item>Неизвестный возбудитель стал причиной превращения людей в кровожадных зомби. Коллапс системы. Больницы более не функционируют. Тотальная паника, армия начинает стрелять на поражение при попытке покинуть карантинную зону. Власть уже не может контролировать ситуацию. Начинается тотальное мародерство и анархия. После выхода из бункера малый процент зомби останется в живых \nОстаток выжившего населения: 21% \nРазрушения на поверхности: 12%.</item>
-        <item>Из-за деятельности человека все полярные снега растаяли, покрыв всю Землю водой. Климат серьезно нарушился, тропики теперь повсюду. Появились новые виды растений и насекомые крупных размеров. После выхода из бункера многие выжившие переквалифицировались в менял, торговцев и бандитов, которые бороздят водные просторы и совершают разбои организованными группами \nОстаток выжившего населения: 25% \nРазрушения на поверхности: 1%.</item>
-        <item>Созданный учеными штамм \"лекарства\" от болезни Альцгеймера в итоге стал смертельным для людей, что привело к пандемии симианского гриппа и восходу эволюционировавших обезьян. У всех оставшихся людей есть иммунитет к вирусу, но он способен мутировать. Больший процент обезьян настроен враждебно по отношению к людям \nОстаток выжившего населения: 4% \nРазрушения на поверхности: 24%.</item>
+    <array name = "catast_descriptions">
+        <item> The explosion of the Yellowstone supervolcano shook the Earth. The ash ejected into the atmosphere blocked the Sun for several months. A "nuclear winter" began on the planet, the average temperature dropped by 11 degrees, and five out of every six creatures inhabiting the Earth died. The climate has changed significantly. The planet is now in a global drought \nPopulation Survivor Remaining: 7% \nSurface destruction: 9%. </item>
+        <item> Intensive farming and soil degradation, coupled with drought, have resulted in dust storms that massively destroy crops and result in crop failures and a significant decrease in food supplies. The oxygen concentration in the atmosphere drops and the climate worsens significantly \nPopulation Survival: 17% \nSurface destruction: 4%. </item>
+        <item> A huge space object falls onto the planet, creating a powerful shock wave that blows everything in its path. A large-scale crater forms at the site of the fall. Strong earthquakes and tsunamis are everywhere. Fires cover the entire Earth, and due to the amount of dust that has risen into the atmosphere, a long \ "nuclear winter \" is coming on the planet \nPopulation Survivor Remaining: 30% \nSurface destruction: 22%. </item>
+        <item> The military working on the project inadvertently opened the door to another dimension. A thick, unnatural white mist slowly began to fill vast areas of the surface. The visibility is almost zero. Unknown monsters began to roam the world, which can destroy all of humanity. The destruction is global. \nPopulation Survivor Remaining: 1%\nSurface destruction: 26%. </item>
+        <item> Artificial intelligence, which was conceived to control defense systems, failed and considered humanity a great danger. This led to the fact that artificial intelligence turned off the instruction \ "do not kill a person \" and took control of the control procedures for military robots that began to exterminate humanity. A supercomputer took over the planet, the surviving people had to hide in old bunkers \nPopulation Surviving Remain: 4% \nSurface destruction: 32%. </item>
+        <item> As a result of the use of chemical and bacteriological weapons, the microbiological composition of the soil was disrupted, the ecological balance changed significantly, plants, soil and water were poisoned. A small percentage of living beings inhabiting it remained on Earth \nPopulation Survivor Remaining: 1% \nSurface destruction: 10%. </item>
+        <item> Interplanetary vehicles fall to the surface of the planet one after another. The militarys weapons are powerless against them, and gradually the aliens exterminate most of the population. After leaving the bunker, the vast majority of aliens died due to their inability to microorganisms that inhabit the Earth. \nPopulation Survivor Remaining: 1% \nSurface destruction: 18% </item>
+        <item> Several warring parties simultaneously launched a volley of nuclear warheads at each other. After the explosions, many people died and huge fires broke out. Nuclear dust enveloped the planet, blocking sunlight and leading to a long nuclear winter. There are problems with soil, water and vegetation on the surface, chemical treatment is needed \nRemains surviving population: 28%\n Surface destruction: 44%. </item>
+        <item> While creating a more infectious and deadly strain of the virus within the walls of the research laboratory, one of the workers accidentally contracted it, as a result of which the virus went out of control and spread very quickly throughout the planet. A large percentage of all living things died. Other creatures and plants have developed mutations \nPopulation Survivor Remaining: 29% \nSurface destruction: 10%. </item>
+        <item> An unknown pathogen caused people to turn into bloodthirsty zombies. Collapse of the system. The hospitals are no longer functional. Total panic, the army starts shooting to kill while trying to leave the quarantine zone. The authorities can no longer control the situation. Total looting and anarchy begins. After leaving the bunker, a small percentage of zombies will survive \nPopulation Survivor: 21% \nSurface destruction: 12%. </item>
+        <item> Due to human activities, all polar snows have melted, covering the entire Earth with water. The climate has been seriously disturbed, the tropics are now everywhere. New species of plants and large insects have appeared. After leaving the bunker, many of the survivors were retrained into money changers, merchants and bandits who plow the water and commit robberies in organized groups \nPopulation Survival: 25% \nSurface destruction: 1%. </item>
+        <item> A strain of Alzheimers "cure" created by scientists eventually became fatal to humans, leading to the Simian flu pandemic and the rise of evolved monkeys. All the remaining people are immune to the virus, but it can mutate. A larger percentage of monkeys are hostile to humans \nPopulation Survival: 4% \nSurface destruction: 24%. </item>
     </array>
 </resources>
