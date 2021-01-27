@@ -90,9 +90,7 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
         val adapter =
             CharactAdapter(mCharactList!!)
         adapter.atachView(RV_Characteristics)
-        adapter.notifyItemInserted(mCharactList!!.size-1)
-        RV_Characteristics.adapter = adapter
-        HeroSingleton.savedHero = mCharactList
+        bindRecyclerView()
     }
 
     inner class CharactAdapter (
@@ -153,8 +151,10 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
                         mCharactList?.clear()
                         mCharactList?.addAll(charactItems)
                     }
-                    HeroSingleton.savedHero = mCharactList
+                    mRecyclerView!!.adapter!!.notifyItemInserted(mCharactList!!.size-1)
                     notifyDataSetChanged()
+
+                    HeroSingleton.savedHero = mCharactList
                     true
                 }
             }
