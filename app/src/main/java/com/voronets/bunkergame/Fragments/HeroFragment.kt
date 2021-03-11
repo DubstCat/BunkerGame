@@ -91,6 +91,8 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
             CharactAdapter(mCharactList!!)
         adapter.atachView(RV_Characteristics)
         bindRecyclerView()
+        updateLists()
+        HeroSingleton.savedHero = mCharactList
     }
 
     inner class CharactAdapter (
@@ -116,7 +118,9 @@ class HeroFragment : Fragment(R.layout.fragment_hero), HeroLogic {
                     AlertDialog.Builder(it.context)
                         .setTitle(getString(R.string.regeneration))
                         .setMessage(getString(R.string.charact_regeneration)+"${it.tv_charact_name.text}"+"?")
-                        .setPositiveButton(getString(R.string.yes)) { _, _ -> rerollCharact(v = it, pos = position)}
+                        .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                            rerollCharact(v = it, pos = position)
+                        }
                         .setNeutralButton(getString(R.string.No), null).create().show()
             }
             holder.itemView.apply {
