@@ -11,6 +11,7 @@ import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.voronets.bunkergame.Fragments.CatastFragment
 import com.voronets.bunkergame.Fragments.HeroFragment
+import com.voronets.bunkergame.Constants
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         mAdView.loadAd(adRequest)
 
         mInterstitialAd = InterstitialAd(this)
-        mInterstitialAd.adUnitId = "ca-app-pub-2011493009274797/9417217683"
+        mInterstitialAd.adUnitId = Constants.google_ads_token
         mInterstitialAd.loadAd(AdRequest.Builder().build())
 
         if (mInterstitialAd.isLoaded) {
