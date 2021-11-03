@@ -90,34 +90,15 @@ class HeroFragment : Fragment(R.layout.fragment_hero) {
 
         @SuppressLint("UseCompatLoadingForDrawables")
         override fun onBindViewHolder(holder: CharactViewHolder, position: Int) {
-            holder.itemView.setOnClickListener {
-                val context = this@HeroFragment
-                if (it.tv_charact_name.text != context.resources.getString(R.string.action_1) && it.tv_charact_name.text != context.resources.getString(
-                        R.string.action_2
-                    )
-                )
-                    AlertDialog.Builder(it.context)
-                        .setTitle(getString(R.string.regeneration))
-                        .setMessage(getString(R.string.charact_regeneration) + "${it.tv_charact_name.text}" + "?")
-                        .setPositiveButton(getString(R.string.yes)) { _, _ ->
-                            rerollCharact(position)
-                        }
-                        .setNeutralButton(getString(R.string.No), null).create().show()
-            }
             holder.itemView.apply {
-                tv_charact_name.text = model.mCharactList.value?.get(position)!!.name
-                tv_charact_description.text = model.mCharactList.value?.get(position)!!.description
 
-                if (!model.mCharactList.value?.get(position)?.isActivated!!) {
-                    tv_charact_name.setTextColor(Color.parseColor("#4a4a4a"))
-                    tv_charact_description.background =
-                        resources.getDrawable(R.drawable.bg_text_dark)
-                } else {
-                    tv_charact_name.setTextColor(Color.parseColor("#604a4a4a"))
-                    tv_charact_description.background =
-                        resources.getDrawable(R.drawable.bg_text_light)
+                setOnClickListener {
+                    if (isNotAnAction(it))
+                        showRerollDialog(it, position)
                 }
 
+                setCharactData(this, position)
+                changeViewIfActivated(this, !model.mCharactList.value?.get(position)?.isActivated!!)
                 setOnLongClickListener {
                     model.setActivated(position)
                     true
@@ -132,7 +113,40 @@ class HeroFragment : Fragment(R.layout.fragment_hero) {
         fun rerollCharact(pos: Int) {
             model.rerollCharact(pos)
         }
+
+        fun setCharactData(itemView: View, position: Int) {
+            itemView.apply {
+                tv_charact_name.text = model.mCharactList.value?.get(position)!!.name
+                tv_charact_description.text = model.mCharactList.value?.get(position)!!.description
+            }
+        }
+
+        fun showRerollDialog(itemView: View, position: Int){
+            AlertDialog.Builder(itemView.context)
+                .setTitle(getString(R.string.regeneration))
+                .setMessage(getString(R.string.charact_regeneration) + "${itemView.tv_charact_name.text}" + "?")
+                .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                    rerollCharact(position)
+                }
+                .setNeutralButton(getString(R.string.No), null).create().show()
+        }
+
+        fun isNotAnAction(itemView: View) = itemView.tv_charact_name.text != context?.resources?.getString(R.string.action_1)
+                                            &&
+                                            itemView.tv_charact_name.text != context?.resources?.getString(R.string.action_2)
+
+        fun changeViewIfActivated(itemView: View, isActivated: Boolean) {
+            itemView.apply {
+                if (isActivated) {
+                    tv_charact_name.setTextColor(Color.parseColor("#4a4a4a"))
+                    tv_charact_description.background =
+                        resources.getDrawable(R.drawable.bg_text_dark)
+                } else {
+                    tv_charact_name.setTextColor(Color.parseColor("#604a4a4a"))
+                    tv_charact_description.background =
+                        resources.getDrawable(R.drawable.bg_text_light)
+                }
+            }
+        }
     }
-
-
 }
