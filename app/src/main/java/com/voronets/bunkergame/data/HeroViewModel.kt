@@ -34,8 +34,14 @@ class HeroViewModel(context: Application) : AndroidViewModel(context) {
 
     var mDescriptions: Array<String> = arrayOf()
 
-    fun rerollCharact(pos:Int){
-        val newItem = CharactItem(mNames[pos],updateDesriptions()[pos])
+    init {
+        mDescriptions = updateDesriptions()
+        createHero()
+    }
+
+    fun rerollCharact(pos: Int) {
+        val newItem = CharactItem(mNames[pos], updateDesriptions()[pos])
+        newItem.isActivated = mCharactList.value?.get(pos)!!.isActivated
         val list = mCharactList.value
         list?.set(pos, newItem)
         mCharactList.value = list
@@ -43,7 +49,7 @@ class HeroViewModel(context: Application) : AndroidViewModel(context) {
 
     fun createHero() {
         mDescriptions = updateDesriptions()
-        val list:MutableList<CharactItem> = arrayListOf()
+        val list: MutableList<CharactItem> = arrayListOf()
         for (i in mNames.indices)
             list.add(
                 CharactItem(
@@ -55,34 +61,29 @@ class HeroViewModel(context: Application) : AndroidViewModel(context) {
     }
 
 
-    init {
-        mDescriptions = updateDesriptions()
-        createHero()
-    }
-
-    fun setActivated(pos:Int){
+    fun setActivated(pos: Int) {
         val list = mCharactList.value
         list!![pos].isActivated = !list[pos].isActivated
         mCharactList.value = list
     }
 
     fun updateDesriptions() = arrayOf(
-            resources.getStringArray(R.array.gender).toList().shuffled()[0],
-            Random.nextInt(18, 100).toString(),
-            resources.getStringArray(R.array.professions).toList().shuffled()[0],
-            resources.getStringArray(R.array.reproduction).toList().shuffled()[0],
-            resources.getStringArray(R.array.orientation).toList().shuffled()[0],
-            resources.getStringArray(R.array.health).toList().shuffled()[0] + " " + Random.nextInt(
-                10,
-                100
-            ) + "%",
-            resources.getStringArray(R.array.body).toList().shuffled()[0],
-            resources.getStringArray(R.array.fear).toList().shuffled()[0],
-            resources.getStringArray(R.array.hobby).toList().shuffled()[0],
-            resources.getStringArray(R.array.character).toList().shuffled()[0],
-            resources.getStringArray(R.array.extra_info).toList().shuffled()[0],
-            resources.getStringArray(R.array.bag).toList().shuffled()[0],
-            resources.getStringArray(R.array.actions).toList().shuffled()[0],
-            resources.getStringArray(R.array.actions).toList().shuffled()[0]
-        )
-    }
+        resources.getStringArray(R.array.gender).toList().shuffled()[0],
+        Random.nextInt(18, 100).toString(),
+        resources.getStringArray(R.array.professions).toList().shuffled()[0],
+        resources.getStringArray(R.array.reproduction).toList().shuffled()[0],
+        resources.getStringArray(R.array.orientation).toList().shuffled()[0],
+        resources.getStringArray(R.array.health).toList().shuffled()[0] + " " + Random.nextInt(
+            10,
+            100
+        ) + "%",
+        resources.getStringArray(R.array.body).toList().shuffled()[0],
+        resources.getStringArray(R.array.fear).toList().shuffled()[0],
+        resources.getStringArray(R.array.hobby).toList().shuffled()[0],
+        resources.getStringArray(R.array.character).toList().shuffled()[0],
+        resources.getStringArray(R.array.extra_info).toList().shuffled()[0],
+        resources.getStringArray(R.array.bag).toList().shuffled()[0],
+        resources.getStringArray(R.array.actions).toList().shuffled()[0],
+        resources.getStringArray(R.array.actions).toList().shuffled()[0]
+    )
+}

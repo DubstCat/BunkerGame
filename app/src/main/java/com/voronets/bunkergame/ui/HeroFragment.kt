@@ -40,7 +40,6 @@ class HeroFragment : Fragment(R.layout.fragment_hero) {
         })
 
         bindListeners()
-
     }
 
 
