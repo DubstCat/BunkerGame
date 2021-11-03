@@ -17,7 +17,6 @@ import kotlin.random.Random
  * A [Fragment] for displaying game situation info.
  */
 class CatastFragment : Fragment(R.layout.fragment_catast) {
-    val KEY_CATAST_MAP = "KEY_CATAST_MAP"
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
