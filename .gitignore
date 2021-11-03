@@ -3,7 +3,7 @@
 /local.properties
 /.idea
 /app/google-services.json
-/app/src/main/java/com/voronets/bunkergame/Constants.kt
+/app/src/main/java/com/voronets/bunkergame/utils/Constants.kt
 .DS_Store
 /build
 /captures

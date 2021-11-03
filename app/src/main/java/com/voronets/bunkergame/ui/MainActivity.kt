@@ -1,4 +1,4 @@
-package com.voronets.bunkergame
+package com.voronets.bunkergame.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,9 +9,10 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
-import com.voronets.bunkergame.Fragments.CatastFragment
-import com.voronets.bunkergame.Fragments.HeroFragment
-import com.voronets.bunkergame.Constants
+import com.voronets.bunkergame.R
+import com.voronets.bunkergame.utils.Constants
+import com.voronets.bunkergame.utils.GameRules
+
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -22,7 +23,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     private lateinit var mAdView : AdView
     private lateinit var mInterstitialAd:InterstitialAd
-
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

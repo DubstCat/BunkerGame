@@ -1,10 +1,9 @@
-package com.voronets.bunkergame.DataClasses
+package com.voronets.bunkergame.utils
 
 /**
  * This class was made for containing info about heroes and situations
  */
 
-object HeroSingleton{
-    var savedHero: ArrayList<CharactItem>? = null
+object CatastSingleton{
     var savedCatast: HashMap<String,String>?= null
 }

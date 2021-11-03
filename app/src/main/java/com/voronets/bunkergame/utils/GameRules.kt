@@ -1,8 +1,9 @@
-package com.voronets.bunkergame
+package com.voronets.bunkergame.utils
 
 
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
+import com.voronets.bunkergame.R
 
 object GameRules {
     fun showRules(context: Context){
